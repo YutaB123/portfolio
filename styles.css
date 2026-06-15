@@ -210,15 +210,21 @@ a { color: inherit; text-decoration: none; }
   border-radius: 6px;
 }
 
-.card-link {
+.card-links {
   margin-top: auto;
-  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.card-link {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--accent);
   transition: color 0.15s ease;
 }
 .card-link:hover { color: var(--accent-dark); }
+.card-link.code { color: var(--muted); }
+.card-link.code:hover { color: var(--text); }
 
 /* ===== Footer ===== */
 .site-footer { border-top: 1px solid var(--border); background: var(--surface); }
