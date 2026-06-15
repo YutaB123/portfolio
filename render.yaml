@@ -1,0 +1,18 @@
+# Render Static Site config
+# Connect this repo in the Render dashboard (New → Blueprint) and it will
+# deploy automatically using the settings below.
+services:
+  - type: web
+    name: yuta-portfolio
+    runtime: static
+    # The whole site is served from the repo root.
+    staticPublishPath: .
+    # Cache static assets; always revalidate the HTML so updates show immediately.
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

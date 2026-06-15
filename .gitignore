@@ -1,0 +1,12 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local temp / scratch (verification artifacts)
+_*
+*.tmp
+
+# Editor folders
+.vscode/
+.idea/

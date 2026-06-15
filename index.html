@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuta Banishky — Software Developer & Builder</title>
+  <meta name="description" content="Portfolio of Yuta Banishky — Informatics student at the University of Washington (Data Science track). Software development, data analysis, and AI application building." />
+
+  <!-- Open Graph (nice link previews when shared) -->
+  <meta property="og:title" content="Yuta Banishky — Software Developer & Builder" />
+  <meta property="og:description" content="Informatics @ UW (Data Science). I turn ideas into real, deployed products — AI apps, computer vision games, and full-stack web." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a href="#top" class="brand">Yuta&nbsp;Banishky</a>
+    <nav class="nav">
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a class="nav-cta" href="https://github.com/YutaB123" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <!-- ===== Hero / About ===== -->
+  <main id="top">
+    <section class="hero" id="about">
+      <p class="eyebrow">Informatics · University of Washington · Data Science track</p>
+      <h1>Hi, I'm Yuta Banishky —<br /><span class="accent">I turn ideas into real products.</span></h1>
+      <p class="lede">
+        Informatics student at the University of Washington on the data science track, skilled in
+        software development, data analysis, and AI application building. Driven to turn ideas into
+        real products and bring initiative, ownership, and a builder's mindset to a technical role.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View projects ↓</a>
+        <a class="btn btn-ghost" href="mailto:yutabanishky@gmail.com">Email me</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/YutaB123" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a>
+        <span aria-hidden="true">·</span>
+        <a href="mailto:yutabanishky@gmail.com" aria-label="Email">yutabanishky@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section class="projects" id="projects">
+      <div class="section-head">
+        <h2>Projects</h2>
+        <p>Seven live, deployed projects — spanning AI, computer vision, real-time multiplayer, and full-stack web.</p>
+      </div>
+
+      <div class="grid">
+
+        <!-- 1. AI Debate Colosseum -->
+        <article class="card">
+          <a class="card-banner banner-debate" href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener" aria-label="Open AI Debate Colosseum">
+            <img src="assets/screenshots/debate.jpg" alt="Screenshot of the AI Debate Colosseum landing page" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>AI Debate Colosseum</h3>
+            <p>Pit AI models against each other in structured, multi-round debates, then review the full transcripts.</p>
+            <ul class="tags"><li>LLMs</li><li>Python</li><li>Web</li></ul>
+            <a class="card-link" href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 2. Charades vs. AI -->
+        <article class="card">
+          <a class="card-banner banner-charades" href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener" aria-label="Open Charades vs. AI">
+            <img src="assets/screenshots/charades.jpg" alt="Screenshot of the Charades vs. AI landing page" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>Charades vs. AI</h3>
+            <p>Act out words on your webcam while Claude watches and shouts guesses — land 10 words under 30 seconds each to win.</p>
+            <ul class="tags"><li>Claude API</li><li>Computer Vision</li><li>Webcam</li></ul>
+            <a class="card-link" href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 3. Hand Tennis -->
+        <article class="card">
+          <a class="card-banner banner-tennis" href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener" aria-label="Open Hand Tennis">
+            <img src="assets/screenshots/tennis.jpg" alt="Screenshot of the Hand Tennis game" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>Hand Tennis</h3>
+            <p>Webcam hand-tracking tennis — each hand controls a paddle through real-time pose detection. No controller needed.</p>
+            <ul class="tags"><li>Computer Vision</li><li>Hand Tracking</li><li>JavaScript</li></ul>
+            <a class="card-link" href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 4. Yutachess -->
+        <article class="card">
+          <a class="card-banner banner-chess" href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener" aria-label="Open Yutachess">
+            <img src="assets/screenshots/chess.jpg" alt="Screenshot of the Yutachess lobby" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>Yutachess</h3>
+            <p>Online multiplayer chess — share a link to play a friend across Bullet, Blitz, and Rapid time controls, with rematches.</p>
+            <ul class="tags"><li>Real-time</li><li>Multiplayer</li><li>Node</li></ul>
+            <a class="card-link" href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 5. Zyde -->
+        <article class="card">
+          <a class="card-banner banner-zyde" href="https://zyde.org/" target="_blank" rel="noopener" aria-label="Open Zyde">
+            <img src="assets/screenshots/zyde.jpg" alt="Screenshot of the Zyde studio homepage" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>Zyde</h3>
+            <p>A web-design studio building conversion-focused websites for local businesses — with real, measurable client results.</p>
+            <ul class="tags"><li>Web Design</li><li>Full-stack</li><li>SEO</li></ul>
+            <a class="card-link" href="https://zyde.org/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 6. KitNations -->
+        <article class="card">
+          <a class="card-banner banner-kit" href="https://kitnations.org/" target="_blank" rel="noopener" aria-label="Open KitNations">
+            <img src="assets/screenshots/kit.jpg" alt="Screenshot of the KitNations store homepage" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="card-body">
+            <h3>KitNations</h3>
+            <p>A Next.js e-commerce store for World Cup 2026 national-team kits from all 48 nations, with worldwide shipping.</p>
+            <ul class="tags"><li>Next.js</li><li>React</li><li>E-commerce</li></ul>
+            <a class="card-link" href="https://kitnations.org/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+        <!-- 7. CSV Reader -->
+        <article class="card">
+          <a class="card-banner banner-csv" href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener" aria-label="Open CSV Reader">
+            <span class="banner-emoji" aria-hidden="true">📊</span>
+          </a>
+          <div class="card-body">
+            <h3>CSV Reader</h3>
+            <p>A Streamlit data tool to upload, view, and explore CSV files right in the browser — quick inspection without a notebook.</p>
+            <ul class="tags"><li>Python</li><li>Streamlit</li><li>Pandas</li></ul>
+            <a class="card-link" href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">Visit live ↗</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-name">Yuta Banishky</p>
+      <p class="footer-links">
+        <a href="https://github.com/YutaB123" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:yutabanishky@gmail.com">Email</a>
+      </p>
+      <p class="footer-meta">Built by Yuta Banishky · 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
