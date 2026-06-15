@@ -115,7 +115,7 @@
 
         <!-- AdSnap (mobile) -->
         <article class="card">
-          <a class="card-banner" href="assets/adsnap-demo.mp4" target="_blank" rel="noopener" aria-label="Watch the AdSnap demo video">
+          <a class="card-banner" href="assets/adsnap-demo.mp4" data-demo="adsnap" target="_blank" rel="noopener" aria-label="Watch the AdSnap demo">
             <img src="assets/screenshots/adsnap.jpg" alt="Frames from an AI-generated video commercial made by AdSnap" loading="lazy" width="1200" height="528" />
           </a>
           <div class="card-body">
@@ -123,7 +123,7 @@
             <p>Point your phone at any item and ~2 minutes later get a full video commercial — cinematic shots, a slogan, an AI voiceover, and music. Expo app with a Node + Azure AI backend.</p>
             <ul class="tags"><li>Mobile app</li><li>React Native</li><li>Azure AI</li></ul>
             <div class="card-links">
-              <a class="card-link" href="assets/adsnap-demo.mp4" target="_blank" rel="noopener">Watch demo ↗</a>
+              <button class="card-link demo" type="button" data-demo="adsnap">Watch demo</button>
               <a class="card-link code" href="https://github.com/YutaB123/adsnap" target="_blank" rel="noopener">Code ↗</a>
             </div>
           </div>
@@ -131,7 +131,7 @@
 
         <!-- recipe.AI (mobile) -->
         <article class="card">
-          <a class="card-banner" href="https://github.com/YutaB123/fridge-ai" target="_blank" rel="noopener" aria-label="recipe.AI on GitHub">
+          <a class="card-banner" href="https://github.com/YutaB123/fridge-ai" data-demo="recipe" target="_blank" rel="noopener" aria-label="See the recipe.AI walkthrough">
             <img src="assets/screenshots/recipe.jpg" alt="recipe.AI — snap your fridge to get AI recipe ideas" loading="lazy" width="1200" height="528" />
           </a>
           <div class="card-body">
@@ -139,6 +139,7 @@
             <p>Snap a photo of your fridge — Claude vision detects the ingredients and suggests dishes to cook now (plus ones a few items away), each with full recipes and nutrition facts.</p>
             <ul class="tags"><li>Mobile app</li><li>React Native</li><li>Claude Vision</li></ul>
             <div class="card-links">
+              <button class="card-link demo" type="button" data-demo="recipe">Watch demo</button>
               <a class="card-link code" href="https://github.com/YutaB123/fridge-ai" target="_blank" rel="noopener">Code ↗</a>
             </div>
           </div>
@@ -146,7 +147,7 @@
 
         <!-- Study Assistant (Canvas) -->
         <article class="card">
-          <a class="card-banner" href="https://github.com/YutaB123/canvas-study-assistant" target="_blank" rel="noopener" aria-label="Study Assistant on GitHub">
+          <a class="card-banner" href="https://github.com/YutaB123/canvas-study-assistant" data-demo="study" target="_blank" rel="noopener" aria-label="See the Study Assistant in action">
             <img src="assets/screenshots/canvas.jpg" alt="Text-message conversation with the Study Assistant about due dates and flashcards" loading="lazy" width="1200" height="528" />
           </a>
           <div class="card-body">
@@ -154,6 +155,7 @@
             <p>Text it like a friend — it's wired to your UW Canvas, so it answers from your real classes and due dates, sets SMS reminders, and turns coursework into flashcards and practice exams.</p>
             <ul class="tags"><li>Python</li><li>Claude</li><li>Twilio SMS</li></ul>
             <div class="card-links">
+              <button class="card-link demo" type="button" data-demo="study">Watch demo</button>
               <a class="card-link code" href="https://github.com/YutaB123/canvas-study-assistant" target="_blank" rel="noopener">Code ↗</a>
             </div>
           </div>
@@ -270,5 +272,7 @@
       <p class="footer-meta">Built by Yuta Banishky · 2026</p>
     </div>
   </footer>
+
+  <script defer src="script.js"></script>
 </body>
 </html>
