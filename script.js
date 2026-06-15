@@ -7,22 +7,27 @@
     adsnap: {
       title: "AdSnap",
       steps: [
-        { video: "assets/adsnap-demo.mp4", cap: "One photo in → a finished ~15s commercial out, with voiceover and music." },
-        { img: "assets/demos/adsnap-out1.jpg", cap: "The AI directs cinematic product shots…" },
+        { img: "assets/demos/adsnap-1.jpg", cap: "Point your phone at any item — center it in the box and tap." },
+        { img: "assets/demos/adsnap-2.jpg", cap: "The AI hires a virtual film crew: writes the ad, films scenes, records a voiceover, adds music." },
+        { img: "assets/demos/adsnap-out1.jpg", cap: "It generates cinematic product shots…" },
         { img: "assets/demos/adsnap-out2.jpg", cap: "…each with an on-screen slogan." },
+        { video: "assets/adsnap-demo.mp4", cap: "~2 minutes later: a finished commercial with voiceover and music." },
       ],
     },
     recipe: {
       title: "recipe.AI",
-      // Placeholder overview until the individual screens are re-added.
       steps: [
-        { img: "assets/screenshots/recipe.jpg", cap: "Capture your fridge → AI dish ideas → a full recipe with nutrition." },
+        { img: "assets/demos/recipe-1.jpg", cap: "Open recipe.AI and point at your open fridge." },
+        { img: "assets/demos/recipe-2.jpg", cap: "Snap a photo of everything inside." },
+        { img: "assets/demos/recipe-3.jpg", cap: "Claude detects your ingredients — edit the list before cooking." },
+        { img: "assets/demos/recipe-4.jpg", cap: "Get dish ideas, each with cook time and full nutrition." },
+        { img: "assets/demos/recipe-5.jpg", cap: "Tap a dish for the complete recipe and steps." },
       ],
     },
     study: {
       title: "Study Assistant",
       steps: [
-        { img: "assets/screenshots/canvas.jpg", cap: "Text it like a friend — answers from your real Canvas, sets reminders, makes study guides." },
+        { img: "assets/demos/study-1.jpg", cap: "Text it like a friend — it answers from your real Canvas grades and due dates, and can even generate documents." },
       ],
     },
   };
