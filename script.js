@@ -27,7 +27,8 @@
     study: {
       title: "Study Assistant",
       steps: [
-        { img: "assets/demos/study-1.jpg", cap: "Text it like a friend — it answers from your real Canvas grades and due dates, and can even generate documents." },
+        { video: "assets/study-demo-1.mp4", cap: "A quick tour — text it for grades, due dates, flashcards, and essay help." },
+        { video: "assets/study-demo-2.mp4", cap: "Live in the app: asking what's due this week." },
       ],
     },
   };
