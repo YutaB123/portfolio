@@ -225,6 +225,15 @@ a { color: inherit; text-decoration: none; }
 .card-link:hover { color: var(--accent-dark); }
 .card-link.code { color: var(--muted); }
 .card-link.code:hover { color: var(--text); }
+/* Prominent "Try it live" pill so visitors can't miss it */
+.card-link.try {
+  background: var(--accent);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--ring);
+}
+.card-link.try:hover { background: var(--accent-dark); color: #fff; }
 
 /* ===== Demo button on cards ===== */
 .card-link.demo {
