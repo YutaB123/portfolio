@@ -24,11 +24,13 @@
         { img: "assets/demos/recipe-5.jpg", cap: "Tap a dish for the complete recipe and steps." },
       ],
     },
-    study: {
-      title: "Study Assistant",
+    dubly: {
+      title: "Dubly",
       steps: [
-        { video: "assets/study-demo-1.mp4", cap: "A quick tour — text it for grades, due dates, flashcards, and essay help." },
-        { video: "assets/study-demo-2.mp4", cap: "Live in the app: asking what's due this week." },
+        { img: "assets/demos/dubly-1.jpg", cap: "Dubly sees your real UW Canvas classes — ask it anything." },
+        { img: "assets/demos/dubly-2.jpg", cap: "Generate a quiz for any class, with instant answers and explanations." },
+        { img: "assets/demos/dubly-3.jpg", cap: "Turn coursework into flashcards to study." },
+        { img: "assets/demos/dubly-4.jpg", cap: "It even drafts Word docs for your assignments." },
       ],
     },
   };
