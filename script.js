@@ -28,6 +28,7 @@
       title: "Dubly",
       steps: [
         { img: "assets/demos/dubly-1.jpg", cap: "Dubly sees your real UW Canvas classes — ask it anything." },
+        { img: "assets/demos/dubly-reminders.jpg", cap: "Set reminders & alerts — get a buzz on a schedule, or just say \"remind me every morning what's due.\"" },
         { img: "assets/demos/dubly-quiz-ask.jpg", cap: "Ask it to make a quiz for an exam…" },
         { img: "assets/demos/dubly-2.jpg", cap: "…and study with instant answers and explanations." },
         { img: "assets/demos/dubly-flash-ask.jpg", cap: "Ask for flashcards on a topic…" },
