@@ -3,6 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Mark JS available so scroll-reveal only hides content when it can be revealed.
+       Gate the cinematic intro behind .is-loading, with a safety timeout that always
+       reveals content even if a CDN/script fails to load. -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add("js");
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        d.classList.add("is-loading");
+        setTimeout(function () { d.classList.remove("is-loading"); }, 2600);
+      }
+    })();
+  </script>
   <title>Yuta Banishky — Software Developer & Builder</title>
   <meta name="description" content="Portfolio of Yuta Banishky — Informatics student at the University of Washington (Data Science track). Software development, data analysis, and AI application building." />
 
@@ -32,7 +45,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -41,51 +54,62 @@
     <a href="#top" class="brand">Yuta&nbsp;Banishky</a>
     <nav class="nav">
       <a href="#projects">Projects</a>
-      <a href="#about">About</a>
       <a class="nav-cta" href="https://github.com/YutaB123" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
   </header>
 
   <!-- ===== Hero / About ===== -->
   <main id="top">
-    <section class="hero" id="about">
-      <div class="hero-text">
-        <p class="eyebrow">Informatics · University of Washington · Data Science track</p>
-        <h1>Yuta Banishky</h1>
-        <p class="hero-role">Software developer — AI applications, data analysis, and full-stack web</p>
-        <p class="lede">
-          Informatics student at the University of Washington on the data science track, skilled in
-          software development, data analysis, and AI application building. Driven to turn ideas into
-          real products and bring initiative, ownership, and a builder's mindset to a technical role.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects">View projects</a>
-          <a class="btn btn-ghost" href="mailto:yutabanishky@gmail.com">Email me</a>
+    <div class="split">
+      <!-- Sticky black panel: gold 3D scene + eye-tracking headshot, pinned through the scroll -->
+      <aside class="split-photo">
+        <!-- Static gradient fallback — stays if WebGL/3D is unavailable or reduced-motion is set -->
+        <div class="hero-bg" aria-hidden="true">
+          <span class="blob b1"></span>
+          <span class="blob b2"></span>
+          <span class="blob b3"></span>
         </div>
-        <div class="socials">
-          <a href="https://github.com/YutaB123" target="_blank" rel="noopener">GitHub</a>
-          <span aria-hidden="true">·</span>
-          <a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener">LinkedIn</a>
-          <span aria-hidden="true">·</span>
-          <a href="mailto:yutabanishky@gmail.com">yutabanishky@gmail.com</a>
+        <!-- Three.js hybrid scene (gold particles + focal crystal) renders here, behind the photo -->
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
+        <div class="photo-stage">
+          <div class="photo-wrap">
+            <img src="assets/headshot.jpg" alt="Headshot of Yuta Banishky" width="640" height="972" />
+          </div>
         </div>
-      </div>
-      <div class="hero-photo">
-        <img src="assets/headshot.jpg" alt="Headshot of Yuta Banishky" width="640" height="972" />
-      </div>
-    </section>
+      </aside>
+
+      <!-- Scrolling white content -->
+      <div class="split-main">
+        <section class="hero" id="about">
+          <div class="hero-text">
+            <p class="eyebrow">Informatics · University of Washington · Data Science track</p>
+            <h1 data-letters>Yuta Banishky</h1>
+            <p class="hero-role">Software developer — AI applications, data analysis, and full-stack web</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#projects">View projects</a>
+              <a class="btn btn-ghost" href="mailto:yutabanishky@gmail.com">Email me</a>
+            </div>
+            <div class="socials">
+              <a href="https://github.com/YutaB123" target="_blank" rel="noopener">GitHub</a>
+              <span aria-hidden="true">·</span>
+              <a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener">LinkedIn</a>
+              <span aria-hidden="true">·</span>
+              <a href="mailto:yutabanishky@gmail.com">yutabanishky@gmail.com</a>
+            </div>
+          </div>
+        </section>
 
     <!-- ===== Projects ===== -->
     <section class="projects" id="projects">
-      <div class="section-head">
-        <h2>Projects</h2>
+      <div class="section-head reveal">
+        <h2><span class="em">Projects</span></h2>
         <p>Projects spanning AI, mobile apps, computer vision, real-time multiplayer, and full-stack web.</p>
       </div>
 
       <div class="grid">
 
         <!-- 1. AI Debate Colosseum -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-debate" href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener" aria-label="Open AI Debate Colosseum">
             <img src="assets/screenshots/debate.jpg" alt="Screenshot of the AI Debate Colosseum landing page" loading="lazy" width="1280" height="800" />
           </a>
@@ -101,7 +125,7 @@
         </article>
 
         <!-- AI Resume Analyzer -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner" href="https://resume-analyzer-vrph.onrender.com/" target="_blank" rel="noopener" aria-label="Open AI Resume Analyzer">
             <img src="assets/screenshots/resume.jpg" alt="Screenshot of the AI Resume Analyzer" loading="lazy" width="1280" height="800" />
           </a>
@@ -117,7 +141,7 @@
         </article>
 
         <!-- AI Poker Room -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner" href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener" aria-label="Open AI Poker Room">
             <img src="assets/screenshots/poker.jpg" alt="Screenshot of the AI Poker Room table" loading="lazy" width="1280" height="844" />
           </a>
@@ -133,7 +157,7 @@
         </article>
 
         <!-- AdSnap (mobile) -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner" href="assets/adsnap-demo.mp4" data-demo="adsnap" target="_blank" rel="noopener" aria-label="Watch the AdSnap demo">
             <img src="assets/screenshots/adsnap.jpg" alt="Frames from an AI-generated video commercial made by AdSnap" loading="lazy" width="1200" height="528" />
           </a>
@@ -149,7 +173,7 @@
         </article>
 
         <!-- recipe.AI (mobile) -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner" href="https://github.com/YutaB123/fridge-ai" data-demo="recipe" target="_blank" rel="noopener" aria-label="See the recipe.AI walkthrough">
             <img src="assets/screenshots/recipe.jpg" alt="recipe.AI — snap your fridge to get AI recipe ideas" loading="lazy" width="1200" height="528" />
           </a>
@@ -165,7 +189,7 @@
         </article>
 
         <!-- Dubly (Canvas study buddy) -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner" href="https://github.com/YutaB123/dubly" data-demo="dubly" target="_blank" rel="noopener" aria-label="See Dubly in action">
             <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy chat wired to UW Canvas" loading="lazy" width="1200" height="528" />
           </a>
@@ -182,7 +206,7 @@
         </article>
 
         <!-- Charades vs. AI -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-charades" href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener" aria-label="Open Charades vs. AI">
             <img src="assets/screenshots/charades.jpg" alt="Screenshot of the Charades vs. AI landing page" loading="lazy" width="1280" height="800" />
           </a>
@@ -197,7 +221,7 @@
         </article>
 
         <!-- 3. Hand Tennis -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-tennis" href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener" aria-label="Open Hand Tennis">
             <img src="assets/screenshots/tennis.jpg" alt="Screenshot of the Hand Tennis game" loading="lazy" width="1280" height="800" />
           </a>
@@ -213,7 +237,7 @@
         </article>
 
         <!-- 4. Yutachess -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-chess" href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener" aria-label="Open Yutachess">
             <img src="assets/screenshots/chess.jpg" alt="Screenshot of the Yutachess lobby" loading="lazy" width="1280" height="800" />
           </a>
@@ -229,7 +253,7 @@
         </article>
 
         <!-- 5. Zyde -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-zyde" href="https://zyde.org/" target="_blank" rel="noopener" aria-label="Open Zyde">
             <img src="assets/screenshots/zyde.jpg" alt="Screenshot of the Zyde studio homepage" loading="lazy" width="1280" height="800" />
           </a>
@@ -245,7 +269,7 @@
         </article>
 
         <!-- 6. KitNations -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-kit" href="https://kitnations.org/" target="_blank" rel="noopener" aria-label="Open KitNations">
             <img src="assets/screenshots/kit.jpg" alt="Screenshot of the KitNations store homepage" loading="lazy" width="1280" height="800" />
           </a>
@@ -261,7 +285,7 @@
         </article>
 
         <!-- 7. CSV Reader -->
-        <article class="card">
+        <article class="card reveal">
           <a class="card-banner banner-csv" href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener" aria-label="Open CSV Data Analyzer">
             <img src="assets/screenshots/csv.jpg" alt="Screenshot of the CSV Data Analyzer" loading="lazy" width="1280" height="800" />
           </a>
@@ -277,7 +301,9 @@
         </article>
 
       </div>
-    </section>
+        </section>
+      </div><!-- /.split-main -->
+    </div><!-- /.split -->
   </main>
 
   <!-- ===== Footer ===== -->
@@ -293,6 +319,22 @@
     </div>
   </footer>
 
+  <!-- ===== Libraries (CDN, no build step) ===== -->
+  <!-- Three.js as an ES module via import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+    }
+  }
+  </script>
+  <!-- GSAP + ScrollTrigger as UMD globals -->
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <!-- App scripts -->
   <script defer src="script.js"></script>
+  <script defer src="animations.js"></script>
+  <script type="module" src="hero3d.js"></script>
 </body>
 </html>
