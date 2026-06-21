@@ -98,13 +98,21 @@
             </div>
           </div>
         </section>
+      </div><!-- /.split-main -->
+    </div><!-- /.split -->
 
-    <!-- ===== Projects ===== -->
+    <!-- ===== Projects (full-width, below the hero) ===== -->
     <section class="projects" id="projects">
       <div class="section-head reveal">
         <h2><span class="em">Projects</span></h2>
         <p>Projects spanning AI, mobile apps, computer vision, real-time multiplayer, and full-stack web.</p>
       </div>
+
+      <!-- CircularGallery (React Bits, ported to vanilla ogl) renders here when
+           WebGL is available; the .grid below is the accessible fallback. -->
+      <div class="project-gallery" id="projectGallery" tabindex="0" role="region"
+           aria-label="Projects gallery. Drag or use arrow keys to browse; click a project to open it."></div>
+      <p class="gallery-hint" aria-hidden="true">Drag to explore · click a project to open</p>
 
       <div class="grid">
 
@@ -302,8 +310,6 @@
 
       </div>
         </section>
-      </div><!-- /.split-main -->
-    </div><!-- /.split -->
   </main>
 
   <!-- ===== Footer ===== -->
@@ -324,7 +330,8 @@
   <script type="importmap">
   {
     "imports": {
-      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "ogl": "https://cdn.jsdelivr.net/npm/ogl@1.0.11/src/index.js"
     }
   }
   </script>
@@ -336,5 +343,6 @@
   <script defer src="script.js"></script>
   <script defer src="animations.js"></script>
   <script type="module" src="hero3d.js"></script>
+  <script type="module" src="gallery.js"></script>
 </body>
 </html>

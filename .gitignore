@@ -7,6 +7,9 @@ desktop.ini
 _*
 *.tmp
 
+# Local-only preview server (no-cache static server for iterating)
+nocache_server.py
+
 # Editor folders
 .vscode/
 .idea/

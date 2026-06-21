@@ -114,6 +114,9 @@
     mediaEl.innerHTML = ""; // stop any video
   }
 
+  // Let the projects CircularGallery open these same lightboxes on tap.
+  window.openProjectDemo = open;
+
   document.addEventListener("DOMContentLoaded", function () {
     build();
     document.querySelectorAll("[data-demo]").forEach((btn) => {

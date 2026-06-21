@@ -250,6 +250,12 @@
       el.addEventListener("focus", on);
       el.addEventListener("blur", off);
     });
+
+    // Clicking the headshot toggles the smiling photo (persists, independent of hover).
+    const photo = document.querySelector(".photo-wrap");
+    if (photo) {
+      photo.addEventListener("click", () => document.body.classList.toggle("smile-locked"));
+    }
   }
 
   function setupNav(gsap) {
