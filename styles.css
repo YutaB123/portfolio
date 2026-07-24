@@ -368,25 +368,6 @@ body.smile-locked .photo-wrap::after { opacity: 1; }
 .section-head p { margin: 0; max-width: 56ch; color: var(--muted); font-size: 0.99rem; }
 
 /* ===== Featured projects: CSS 3D scatter / coverflow rail ===== */
-.project-gallery {
-  display: none;            /* shown once the gallery is active */
-  position: relative;
-  width: 100%;
-  height: clamp(440px, 60vh, 600px);
-  perspective: 1600px;
-  place-items: center;
-  background: var(--panel);
-  border-radius: var(--radius);
-  overflow: hidden;
-  cursor: grab;
-  user-select: none;
-  touch-action: pan-y;      /* let vertical page scroll through; gallery drags horizontally */
-  outline: none;
-}
-.projects.gallery-active .project-gallery { display: grid; }
-.project-gallery.is-grabbing { cursor: grabbing; }
-.project-gallery:focus-visible { box-shadow: inset 0 0 0 2px var(--ring); }
-
 .gallery-label, .grid-label {
   margin: 0 0 14px;
   font-size: 0.78rem;
@@ -474,118 +455,9 @@ body.smile-locked .photo-wrap::after { opacity: 1; }
 .scatter-pip.on { background: var(--gold); transform: scale(1.35); }
 .scatter-pip:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-.gallery-hint {
-  display: none;
-  margin: 16px 0 0;
-  text-align: center;
-  color: var(--muted);
-  font-size: 0.82rem;
-  letter-spacing: 0.02em;
-}
-
 @media (max-width: 560px) {
   .scatter-card { width: 248px; height: 332px; }
 }
-
-/* When the gallery initializes it sits on top; the full card grid stays below. */
-.projects.gallery-active .gallery-hint { display: block; }
-.projects.gallery-active .grid { display: grid; margin-top: 40px; }
-
-/* The cards below the gallery must always be visible — don't gate them behind a
-   scroll-reveal that can mis-fire after the gallery shifts the layout. They get a
-   gentle one-time fade in instead (independent of scroll position). */
-.projects.gallery-active .grid .reveal {
-  opacity: 1;
-  transform: none;
-  animation: cardFadeIn 0.6s ease both;
-}
-/* Tag pills use a separate GSAP .from() that hides them until scrolled past;
-   keep them visible so a card never shows with an empty tag row. */
-.projects.gallery-active .grid .card .tags li {
-  opacity: 1 !important;
-  transform: none !important;
-}
-@keyframes cardFadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
-  gap: 22px;
-  perspective: 1200px;
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: var(--shadow-sm);
-  transform-style: preserve-3d;
-  transition: transform 0.22s cubic-bezier(.2,.7,.2,1), box-shadow 0.22s ease, border-color 0.22s ease;
-}
-.card:hover, .card.tilt { box-shadow: var(--shadow-md); border-color: var(--accent); }
-.card:hover { transform: translateY(-6px); }
-.card.tilt { transform: none; }
-
-.card-banner {
-  display: block;
-  height: 158px;
-  background: #f3efe2;
-  border-bottom: 1px solid var(--border);
-  overflow: hidden;
-}
-.card-banner img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-  transform: scale(1.001);
-  transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
-  will-change: transform;
-}
-.card:hover .card-banner img, .card.tilt .card-banner img { transform: scale(1.08); }
-
-.card-body { display: flex; flex-direction: column; flex: 1; padding: 18px 20px 20px; }
-.card-body h3 { margin: 0 0 7px; font-family: var(--font-head); font-size: 1.16rem; letter-spacing: -0.01em; font-weight: 600; color: var(--ink); will-change: transform; }
-.card-body > p { margin: 0 0 15px; color: var(--muted); font-size: 0.92rem; }
-
-.tags { list-style: none; display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 16px; padding: 0; will-change: transform; }
-.tags li {
-  font-size: 0.74rem;
-  font-weight: 600;
-  color: var(--gold-ink);
-  background: rgba(184, 134, 47, 0.10);
-  border: 1px solid rgba(184, 144, 47, 0.30);
-  padding: 4px 11px;
-  border-radius: 999px;
-}
-
-.card-links { margin-top: auto; display: flex; align-items: center; gap: 16px; }
-.card-link { font-weight: 700; font-size: 0.9rem; color: var(--gold-ink); transition: color 0.15s ease; }
-.card-link:hover { color: var(--gold-deep); }
-.card-link.code { color: var(--muted); }
-.card-link.code:hover { color: var(--ink); }
-.card-link.try {
-  background: var(--ink);
-  color: #fff;
-  padding: 7px 15px;
-  border-radius: 999px;
-  transition: transform 0.16s ease, background 0.16s ease;
-}
-.card-link.try:hover { transform: translateY(-2px); background: var(--accent); color: #fff; }
-.card-link.demo {
-  display: inline-flex; align-items: center; gap: 6px;
-  background: none; border: 0; padding: 0; font: inherit;
-  font-weight: 700; font-size: 0.9rem; color: var(--gold-ink); cursor: pointer;
-}
-.card-link.demo::before { content: "▶"; font-size: 0.62rem; }
-.card-link.demo:hover { color: var(--gold-deep); }
 
 /* ===== Scroll reveal ===== */
 .js .reveal {
@@ -654,7 +526,6 @@ body.smile-locked .photo-wrap::after { opacity: 1; }
 @media (max-width: 640px) {
   .nav { gap: 14px; }
   .nav a:not(.nav-cta) { display: none; }
-  .grid { grid-template-columns: 1fr; }
 }
 
 /* ===== Cinematic intro (initial hidden states; JS-gated, never a FOUC) ===== */
@@ -983,3 +854,50 @@ a:focus-visible, .btn:focus-visible, button:focus-visible {
 .featured-image a:hover:before, .featured-image a:focus-visible:before { background: transparent; }
 .featured-image a:hover img, .featured-image a:focus-visible img { filter: none; }
 @media (max-width: 768px) { .featured-image { grid-column: 1 / -1 !important; opacity: 0.25; } }
+
+/* ===== Other Noteworthy Projects grid (Task 7) ===== */
+.other-projects { margin-top: 50px; }
+.other-projects-heading { font-size: clamp(24px, 5vw, var(--fz-heading)); text-align: center; margin-bottom: 10px; }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 15px;
+  list-style: none;
+  margin: 50px 0 0;
+  padding: 0;
+}
+.hidden-project { display: none; }
+.projects-grid.show-all .hidden-project { display: flex; }
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  padding: 2rem 1.75rem;
+  background-color: var(--light-navy);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px -15px var(--navy-shadow);
+  transition: var(--transition);
+}
+.project-card:hover, .project-card:focus-within { transform: translateY(-7px); }
+
+.project-card-top { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 35px; }
+.folder-icon { color: var(--green); }
+.project-card-links { display: flex; align-items: center; gap: 4px; color: var(--light-slate); }
+.project-card-links a, .project-card-links .icon-btn {
+  display: flex; align-items: center; justify-content: center; padding: 5px 7px;
+  background: none; border: none; cursor: pointer; color: inherit; transition: var(--transition);
+}
+.project-card-links a:hover, .project-card-links a:focus-visible,
+.project-card-links .icon-btn:hover, .project-card-links .icon-btn:focus-visible { color: var(--green); outline: none; }
+
+.project-card-title { color: var(--lightest-slate); font-size: var(--fz-xxl); margin-bottom: 10px; }
+.project-card-title a:hover, .project-card-title a:focus-visible { color: var(--green); }
+.project-card-desc { color: var(--light-slate); font-size: var(--fz-md); flex-grow: 1; }
+
+.project-card-tech { display: flex; flex-wrap: wrap; list-style: none; margin: 20px 0 0; padding: 0; }
+.project-card-tech li { font-family: var(--font-mono); font-size: var(--fz-xxs); color: var(--slate); margin-right: 15px; line-height: 1.75; }
+
+.more-button { display: block; margin: 60px auto 0; }

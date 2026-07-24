@@ -117,10 +117,21 @@
     });
   }
 
+  function initShowMore() {
+    var grid = document.getElementById("projectsGrid");
+    var btn = document.getElementById("showMoreBtn");
+    if (!grid || !btn) return;
+    btn.addEventListener("click", function () {
+      var showing = grid.classList.toggle("show-all");
+      btn.textContent = showing ? "Show Less" : "Show More";
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initHamburger();
     initHeroStagger();
     initTabs();
+    initShowMore();
   });
 })();
