@@ -187,6 +187,86 @@
       </div>
     </section>
 
+    <section id="work" class="work">
+      <h2 class="numbered-heading work-heading reveal">Some Things I've Built</h2>
+
+      <ul class="featured-list">
+        <li class="featured-project reveal">
+          <div class="featured-image">
+            <a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">
+              <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy wired to UW Canvas" loading="lazy" width="1200" height="528" />
+            </a>
+          </div>
+          <div class="featured-content">
+            <p class="featured-overline">Featured Project</p>
+            <h3 class="featured-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly</a></h3>
+            <div class="featured-desc">
+              A husky-themed study buddy wired to your UW Canvas. Chat to see what's due and your
+              grades, ask about any syllabus, and spin up quizzes, flashcards, study plans, and
+              Word docs for your assignments — plus a bring-your-own-API-key architecture that
+              keeps it free to run at scale.
+            </div>
+            <ul class="featured-tech">
+              <li>Next.js</li><li>Twilio</li><li>Canvas LMS API</li><li>Anthropic Claude API</li>
+            </ul>
+            <div class="featured-links">
+              <a href="https://github.com/YutaB123/dubly" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+              <button type="button" class="icon-btn" data-demo="dubly" aria-label="Watch demo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
+            </div>
+          </div>
+        </li>
+
+        <li class="featured-project reveal">
+          <div class="featured-image">
+            <a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">
+              <img src="assets/screenshots/csv.jpg" alt="AI CSV Data Analyzer" loading="lazy" width="1280" height="800" />
+            </a>
+          </div>
+          <div class="featured-content">
+            <p class="featured-overline">Featured Project</p>
+            <h3 class="featured-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer</a></h3>
+            <div class="featured-desc">
+              Upload a CSV, ask questions about it in plain English, and get answers with
+              auto-generated bar, pie, line, and scatter charts. A three-stage agent pipeline (LLM
+              planning → local Python execution → LLM explanation) keeps raw data on-device,
+              sending only schema and aggregates to the API for privacy.
+            </div>
+            <ul class="featured-tech">
+              <li>Python</li><li>Gradio</li><li>pandas</li><li>OpenAI GPT-4o-mini</li><li>Matplotlib</li>
+            </ul>
+            <div class="featured-links">
+              <a href="https://github.com/YutaB123/CSV-Reader" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+              <a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </li>
+
+        <li class="featured-project reveal">
+          <div class="featured-image">
+            <a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">
+              <img src="assets/screenshots/chess.jpg" alt="Yutachess — real-time multiplayer chess" loading="lazy" width="1280" height="800" />
+            </a>
+          </div>
+          <div class="featured-content">
+            <p class="featured-overline">Featured Project</p>
+            <h3 class="featured-title"><a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Yutachess</a></h3>
+            <div class="featured-desc">
+              Real-time multiplayer chess — share a 6-character room code, pick a time control
+              (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
+              WebSockets. Server-authoritative move validation blocks illegal moves and guarantees
+              fair play across concurrent clients.
+            </div>
+            <ul class="featured-tech">
+              <li>Node.js</li><li>Express</li><li>Socket.IO</li><li>chess.js</li>
+            </ul>
+            <div class="featured-links">
+              <a href="https://github.com/YutaB123/yutachess" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
+              <a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            </div>
+          </div>
+        </li>
+      </ul>
+
     <!-- ===== Projects (full-width, below the hero) ===== -->
     <section class="projects" id="projects">
       <div class="section-head reveal">
