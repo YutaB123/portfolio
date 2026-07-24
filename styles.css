@@ -790,3 +790,26 @@ a:focus-visible, .btn:focus-visible, button:focus-visible {
   font-size: var(--fz-xxs); letter-spacing: 0.1em; writing-mode: vertical-rl; transition: var(--transition);
 }
 .side-rail-right a:hover, .side-rail-right a:focus-visible { color: var(--green); transform: translateY(-3px); }
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 150px;
+  max-width: 1000px;
+}
+@media (max-width: 1080px) { .hero { padding: 0 100px; } }
+@media (max-width: 768px) { .hero { padding: 0 50px; } }
+@media (max-width: 480px) { .hero { padding: 0 25px; } }
+
+.hero-greeting { color: var(--green); font-family: var(--font-mono); font-size: clamp(var(--fz-sm), 5vw, var(--fz-md)); margin-bottom: 20px; }
+.hero-name { font-size: clamp(40px, 8vw, 80px); color: var(--lightest-slate); line-height: 1.1; }
+.hero-tagline { font-size: clamp(40px, 8vw, 80px); color: var(--slate); line-height: 1.1; margin-top: 5px; }
+.hero-desc { max-width: 540px; margin-top: 20px; color: var(--slate); }
+.hero-cta { margin-top: 50px; }
+
+.reveal-line { opacity: 0; transform: translateY(20px); transition: opacity 0.5s var(--easing), transform 0.5s var(--easing); }
+.reveal-line.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .reveal-line { opacity: 1; transform: none; } }

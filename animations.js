@@ -54,8 +54,22 @@
     });
   }
 
+  function initHeroStagger() {
+    var lines = document.querySelectorAll(".reveal-line");
+    if (!lines.length) return;
+    var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) {
+      lines.forEach(function (el) { el.classList.add("is-visible"); });
+      return;
+    }
+    lines.forEach(function (el, i) {
+      setTimeout(function () { el.classList.add("is-visible"); }, 300 + i * 150);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNav();
     initHamburger();
+    initHeroStagger();
   });
 })();
