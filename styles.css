@@ -872,3 +872,44 @@ a:focus-visible, .btn:focus-visible, button:focus-visible {
 .about-pic-wrap:focus-within img { filter: none; mix-blend-mode: normal; }
 .about-pic-wrap:hover:after,
 .about-pic-wrap:focus-within:after { transform: translate(24px, 24px); }
+
+.experience { max-width: 700px; margin: 0 auto; padding: 50px 50px 100px; }
+@media (max-width: 768px) { .experience { padding: 50px 25px 80px; } }
+
+.tabs-inner { display: flex; }
+@media (max-width: 600px) { .tabs-inner { display: block; } }
+
+.tab-list { position: relative; display: flex; flex-direction: column; list-style: none; margin: 0; padding: 0; width: max-content; }
+@media (max-width: 600px) { .tab-list { flex-direction: row; overflow-x: auto; width: 100%; margin-bottom: 30px; } }
+
+.tab-btn {
+  display: flex; align-items: center; height: var(--tab-height); padding: 0 20px;
+  background: transparent; border: none; border-left: 2px solid var(--lightest-navy);
+  color: var(--slate); font-family: var(--font-mono); font-size: var(--fz-xs);
+  text-align: left; white-space: nowrap; cursor: pointer; transition: var(--transition);
+}
+.tab-btn.is-active { color: var(--green); }
+.tab-btn:hover, .tab-btn:focus-visible { background-color: var(--light-navy); }
+@media (max-width: 600px) {
+  .tab-btn { border-left: 0; border-bottom: 2px solid var(--lightest-navy); min-width: 120px; justify-content: center; }
+}
+
+.tab-highlight {
+  position: absolute; top: 0; left: 0; width: 2px; height: var(--tab-height);
+  background: var(--green); transition: transform 0.25s var(--easing);
+}
+@media (max-width: 600px) {
+  .tab-highlight { top: auto; bottom: 0; left: 0; width: var(--tab-width); max-width: var(--tab-width); height: 2px; }
+}
+
+.tab-panels { position: relative; width: 100%; margin-left: 20px; }
+@media (max-width: 600px) { .tab-panels { margin-left: 0; } }
+
+.tab-panel { display: none; padding: 10px 5px; }
+.tab-panel.is-active { display: block; }
+.tab-panel h3 { font-size: var(--fz-xxl); font-weight: 500; }
+.tab-panel h3 .company { color: var(--green); }
+.tab-range { margin: 2px 0 25px; color: var(--light-slate); font-family: var(--font-mono); font-size: var(--fz-xs); }
+.tab-panel ul { padding: 0; margin: 0; list-style: none; font-size: var(--fz-lg); }
+.tab-panel li { position: relative; padding-left: 30px; margin-bottom: 10px; color: var(--slate); }
+.tab-panel li:before { content: '▹'; position: absolute; left: 0; color: var(--green); }
