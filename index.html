@@ -50,365 +50,216 @@
 </head>
 <body>
   <div class="cursor-glow" aria-hidden="true"></div>
-  <!-- ===== Header ===== -->
-  <header class="nav" id="siteNav">
-    <div class="nav-inner">
-      <a href="#top" class="nav-logo" aria-label="Home">YB</a>
-      <nav class="nav-links">
-        <ol>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ol>
-        <a class="btn-sm nav-resume" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-      </nav>
-      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
-        <span class="ham-box"><span class="ham-line"></span></span>
-      </button>
-    </div>
-  </header>
 
-  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <nav>
-      <ol>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ol>
-      <a class="btn mobile-resume" href="assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-    </nav>
-  </aside>
-
-  <aside class="side-rail side-rail-left" aria-label="Social links">
-    <ul>
-      <li><a href="https://github.com/YutaB123" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-      </a></li>
-      <li><a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-      </a></li>
-    </ul>
-  </aside>
-
-  <aside class="side-rail side-rail-right" aria-label="Email">
-    <a href="mailto:yutabanishky@gmail.com">yutabanishky@gmail.com</a>
-  </aside>
-
-  <!-- ===== Hero / About ===== -->
-  <main id="top">
-    <section class="hero">
-      <p class="hero-greeting reveal-line">Hi, my name is</p>
-      <h1 class="hero-name reveal-line">Yuta Banishky.</h1>
-      <h2 class="hero-tagline reveal-line">I build things that ship.</h2>
-      <p class="hero-desc reveal-line">
-        I'm an Informatics student at the University of Washington (Data Science track) who likes
-        turning ideas into something real — a working, deployed product, not just a prototype. I
-        build AI applications, computer-vision games, and full-stack web apps, most of which are
-        live and linked below.
-      </p>
-      <a class="btn hero-cta reveal-line" href="#work">Check out my work</a>
-    </section>
-
-    <section id="about" class="about reveal">
-      <h2 class="numbered-heading">About Me</h2>
-      <div class="about-inner">
-        <div class="about-text">
-          <p>
-            Hello! I'm Yuta, a B.S. Informatics student at the University of Washington on the
-            Data Science track, expected to graduate in June 2029.
+  <div class="layout">
+    <header class="sidebar" id="top">
+      <div class="sidebar-main">
+        <div class="sidebar-top">
+          <h1 class="sidebar-name"><a href="#top">Yuta Banishky</a></h1>
+          <h2 class="sidebar-title">Software Developer</h2>
+          <p class="sidebar-desc">
+            I build things that ship — AI applications, computer-vision games, and full-stack web
+            products.
           </p>
-          <p>
-            My interest in building things started before college — I founded
-            <span class="about-highlight">Bellevue Coding</span>, a free weekly Python program for
-            kids ages 8–14 at the Bellevue Library, and
-            <span class="about-highlight">Wilburton Soccer</span>, a youth training program I built
-            and ran from scratch. Since then I've kept building: AI applications, computer-vision
-            games, real-time multiplayer apps, and full-stack web products — most of them live and
-            linked below.
-          </p>
-          <p>
-            Currently, I'm exploring LLM application development and coursework in data programming
-            and statistics at UW.
-          </p>
-          <p>Here are a few technologies I've been working with recently:</p>
-          <ul class="skills-list">
-            <li>Python</li>
-            <li>Next.js / React</li>
-            <li>JavaScript / SQL</li>
-            <li>Node.js / Express</li>
-            <li>Claude &amp; OpenAI APIs</li>
-            <li>pandas / Matplotlib</li>
-          </ul>
         </div>
-        <div class="about-pic">
-          <div class="about-pic-wrap">
-            <img src="assets/headshot.jpg" alt="Headshot of Yuta Banishky" width="300" height="456" loading="lazy" />
+        <nav class="sidebar-nav" aria-label="In-page navigation">
+          <ul>
+            <li><a href="#about"><span class="nav-line"></span><span class="nav-label">About</span></a></li>
+            <li><a href="#experience"><span class="nav-line"></span><span class="nav-label">Experience</span></a></li>
+            <li><a href="#work"><span class="nav-line"></span><span class="nav-label">Projects</span></a></li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="sidebar-socials" aria-label="Social links">
+        <li><a href="https://github.com/YutaB123" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+        </a></li>
+        <li><a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a></li>
+        <li><a href="mailto:yutabanishky@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+        </a></li>
+      </ul>
+    </header>
+
+    <main class="content">
+      <section id="about" class="about-panel reveal">
+        <p>
+          Hello! I'm Yuta, a B.S. Informatics student at the University of Washington on the Data
+          Science track, expected to graduate in June 2029.
+        </p>
+        <p>
+          My interest in building things started before college — I founded
+          <span class="about-highlight">Bellevue Coding</span>, a free weekly Python program for
+          kids ages 8–14 at the Bellevue Library, and
+          <span class="about-highlight">Wilburton Soccer</span>, a youth training program I built
+          and ran from scratch. Since then I've kept building: AI applications, computer-vision
+          games, real-time multiplayer apps, and full-stack web products — most of them live and
+          linked below.
+        </p>
+        <p>
+          Currently, I'm exploring LLM application development and coursework in data programming
+          and statistics at UW.
+        </p>
+        <p>Here are a few technologies I've been working with recently:</p>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>Next.js / React</li>
+          <li>JavaScript / SQL</li>
+          <li>Node.js / Express</li>
+          <li>Claude &amp; OpenAI APIs</li>
+          <li>pandas / Matplotlib</li>
+        </ul>
+      </section>
+
+      <section id="experience" class="experience-panel reveal">
+        <h3 class="exp-group-heading">Relevant Experience</h3>
+
+        <div class="exp-entry">
+          <p class="exp-range">Jan 2026 – Present</p>
+          <div class="exp-body">
+            <h4><span>Volunteer Data Analyst</span> <span class="company">· University Food Bank</span></h4>
+            <ul>
+              <li>Analyze food bank distribution data to identify high-demand items and inform restocking decisions.</li>
+              <li>Support inventory management for a food bank serving students and community members experiencing food insecurity, including unhoused individuals.</li>
+            </ul>
+            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">SQL</li></ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="experience" class="experience reveal">
-      <h2 class="numbered-heading">Where I've Worked</h2>
-      <div class="tabs-inner">
-        <div class="tab-list" role="tablist" aria-label="Job tabs">
-          <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="panel-0" id="tab-0" data-tab="0">Bellevue Coding</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-1" id="tab-1" data-tab="1" tabindex="-1">Wilburton Soccer</button>
-          <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-2" id="tab-2" data-tab="2" tabindex="-1">Mochinut</button>
-          <div class="tab-highlight" style="transform: translateY(0)"></div>
+        <div class="exp-entry">
+          <p class="exp-range">Nov 2025 – May 2026</p>
+          <div class="exp-body">
+            <h4><span>Project Officer</span> <span class="company">· UW Data Science Club</span></h4>
+            <ul>
+              <li>Led planning and execution of club data science projects, coordinating timelines and deliverables across teams of student members.</li>
+              <li>Organized club meetings and workshops, connecting members with project opportunities and technical resources to build practical data science skills.</li>
+            </ul>
+            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Data Analysis</li></ul>
+          </div>
         </div>
-        <div class="tab-panels">
-          <div class="tab-panel is-active" id="panel-0" role="tabpanel" aria-labelledby="tab-0">
-            <h3><span>Founder &amp; Instructor</span> <span class="company">@ Bellevue Coding</span></h3>
-            <p class="tab-range">Jan 2025 – Jun 2025</p>
+
+        <div class="exp-entry">
+          <p class="exp-range">Jan 2025 – Jun 2025</p>
+          <div class="exp-body">
+            <h4><span>Founder &amp; Instructor</span> <span class="company">· Bellevue Coding</span></h4>
             <ul>
               <li>Founded and taught a free weekly Python program for children ages 8–14 at the Bellevue Library, designing all curriculum, lesson plans, and practice exercises from scratch in Python, VS Code, and Scratch.</li>
               <li>Grew enrollment from 3 to 7 students per session through consistent, hands-on weekly instruction and informal office hours tailored to each student's pace.</li>
             </ul>
+            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">VS Code</li><li class="tech-pill">Scratch</li></ul>
           </div>
-          <div class="tab-panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" hidden>
-            <h3><span>Founder &amp; Organizer</span> <span class="company">@ Wilburton Soccer</span></h3>
-            <p class="tab-range">Mar 2024 – Aug 2024</p>
+        </div>
+
+        <div class="exp-entry">
+          <p class="exp-range">Sep 2023 – Jun 2025</p>
+          <div class="exp-body">
+            <h4><span>Peer Tutor, Coding &amp; Computer Science</span> <span class="company">· Bellevue High School</span></h4>
             <ul>
-              <li>Founded and operated a youth soccer training program running practices three times weekly, with a paid membership and per-session pricing model and self-run marketing.</li>
-              <li>Grew participation from 2 to 8+ players per session through self-directed community outreach.</li>
+              <li>Tutored classmates one-on-one in introductory coding and computer science coursework, breaking down programming concepts to fit each student's learning pace.</li>
             </ul>
           </div>
-          <div class="tab-panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-            <h3><span>Shift Manager</span> <span class="company">@ Mochinut, Bellevue, WA</span></h3>
-            <p class="tab-range">Mar 2024 – May 2025</p>
+        </div>
+
+        <h3 class="exp-group-heading exp-group-heading-other">Other Experience</h3>
+
+        <div class="exp-entry">
+          <p class="exp-range">Nov 2023 – May 2025</p>
+          <div class="exp-body">
+            <h4><span>Team Captain &amp; Head Student Coach</span> <span class="company">· Special Olympics Unified Champion Schools</span></h4>
+            <ul>
+              <li>Coached and mentored teammates with intellectual and developmental disabilities, adapting communication style and drill structure to each athlete's individual needs.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="exp-entry">
+          <p class="exp-range">Mar 2024 – May 2025</p>
+          <div class="exp-body">
+            <h4><span>Shift Manager</span> <span class="company">· Mochinut, Bellevue, WA</span></h4>
             <ul>
               <li>Managed shift operations for a 5-person team at a high-traffic mall location serving roughly 300 customers daily, owning all closing duties and register reconciliation.</li>
               <li>Drove a 5–10% increase in shift sales through upselling and operational efficiency.</li>
             </ul>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="work" class="work">
-      <h2 class="numbered-heading work-heading reveal">Some Things I've Built</h2>
-
-      <ul class="featured-list">
-        <li class="featured-project reveal">
-          <div class="featured-image">
-            <a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">
-              <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy wired to UW Canvas" loading="lazy" width="1200" height="528" />
-            </a>
+        <div class="exp-entry">
+          <p class="exp-range">Mar 2024 – Aug 2024</p>
+          <div class="exp-body">
+            <h4><span>Founder &amp; Organizer</span> <span class="company">· Wilburton Soccer</span></h4>
+            <ul>
+              <li>Founded and operated a youth soccer training program running practices three times weekly, with a paid membership and per-session pricing model and self-run marketing.</li>
+              <li>Grew participation from 2 to 8+ players per session through self-directed community outreach.</li>
+            </ul>
           </div>
-          <div class="featured-content">
-            <p class="featured-overline">Featured Project</p>
-            <h3 class="featured-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly</a></h3>
-            <div class="featured-desc">
+        </div>
+      </section>
+
+      <section id="work" class="projects-panel reveal">
+        <a class="resume-link" href="assets/resume.pdf" target="_blank" rel="noopener">View Full Résumé <span aria-hidden="true">→</span></a>
+
+        <h3 class="projects-heading">Selected Projects</h3>
+
+        <div class="selected-project">
+          <a class="selected-project-thumb" href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">
+            <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy wired to UW Canvas" loading="lazy" width="1200" height="528" />
+          </a>
+          <div class="selected-project-body">
+            <h4 class="selected-project-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly <span aria-hidden="true">↗</span></a></h4>
+            <p class="selected-project-desc">
               A husky-themed study buddy wired to your UW Canvas. Chat to see what's due and your
               grades, ask about any syllabus, and spin up quizzes, flashcards, study plans, and
               Word docs for your assignments — plus a bring-your-own-API-key architecture that
               keeps it free to run at scale.
-            </div>
-            <ul class="featured-tech">
-              <li>Next.js</li><li>Twilio</li><li>Canvas LMS API</li><li>Anthropic Claude API</li>
+            </p>
+            <ul class="tech-pill-list">
+              <li class="tech-pill">Next.js</li><li class="tech-pill">Twilio</li><li class="tech-pill">Canvas LMS API</li><li class="tech-pill">Anthropic Claude API</li>
             </ul>
-            <div class="featured-links">
-              <a href="https://github.com/YutaB123/dubly" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-              <button type="button" class="icon-btn" data-demo="dubly" aria-label="Watch demo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-            </div>
           </div>
-        </li>
+        </div>
 
-        <li class="featured-project reveal">
-          <div class="featured-image">
-            <a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">
-              <img src="assets/screenshots/csv.jpg" alt="AI CSV Data Analyzer" loading="lazy" width="1280" height="800" />
-            </a>
-          </div>
-          <div class="featured-content">
-            <p class="featured-overline">Featured Project</p>
-            <h3 class="featured-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer</a></h3>
-            <div class="featured-desc">
+        <div class="selected-project">
+          <a class="selected-project-thumb" href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">
+            <img src="assets/screenshots/csv.jpg" alt="AI CSV Data Analyzer" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="selected-project-body">
+            <h4 class="selected-project-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer <span aria-hidden="true">↗</span></a></h4>
+            <p class="selected-project-desc">
               Upload a CSV, ask questions about it in plain English, and get answers with
               auto-generated bar, pie, line, and scatter charts. A three-stage agent pipeline (LLM
               planning → local Python execution → LLM explanation) keeps raw data on-device,
               sending only schema and aggregates to the API for privacy.
-            </div>
-            <ul class="featured-tech">
-              <li>Python</li><li>Gradio</li><li>pandas</li><li>OpenAI GPT-4o-mini</li><li>Matplotlib</li>
+            </p>
+            <ul class="tech-pill-list">
+              <li class="tech-pill">Python</li><li class="tech-pill">Gradio</li><li class="tech-pill">pandas</li><li class="tech-pill">OpenAI GPT-4o-mini</li><li class="tech-pill">Matplotlib</li>
             </ul>
-            <div class="featured-links">
-              <a href="https://github.com/YutaB123/CSV-Reader" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-              <a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            </div>
           </div>
-        </li>
+        </div>
 
-        <li class="featured-project reveal">
-          <div class="featured-image">
-            <a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">
-              <img src="assets/screenshots/chess.jpg" alt="Yutachess — real-time multiplayer chess" loading="lazy" width="1280" height="800" />
-            </a>
-          </div>
-          <div class="featured-content">
-            <p class="featured-overline">Featured Project</p>
-            <h3 class="featured-title"><a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Yutachess</a></h3>
-            <div class="featured-desc">
+        <div class="selected-project">
+          <a class="selected-project-thumb" href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">
+            <img src="assets/screenshots/chess.jpg" alt="Yutachess — real-time multiplayer chess" loading="lazy" width="1280" height="800" />
+          </a>
+          <div class="selected-project-body">
+            <h4 class="selected-project-title"><a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Yutachess <span aria-hidden="true">↗</span></a></h4>
+            <p class="selected-project-desc">
               Real-time multiplayer chess — share a 6-character room code, pick a time control
               (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
               WebSockets. Server-authoritative move validation blocks illegal moves and guarantees
               fair play across concurrent clients.
-            </div>
-            <ul class="featured-tech">
-              <li>Node.js</li><li>Express</li><li>Socket.IO</li><li>chess.js</li>
+            </p>
+            <ul class="tech-pill-list">
+              <li class="tech-pill">Node.js</li><li class="tech-pill">Express</li><li class="tech-pill">Socket.IO</li><li class="tech-pill">chess.js</li>
             </ul>
-            <div class="featured-links">
-              <a href="https://github.com/YutaB123/yutachess" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-              <a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            </div>
           </div>
-        </li>
-      </ul>
+        </div>
 
-      <div class="other-projects reveal">
-        <h3 class="other-projects-heading">Other Noteworthy Projects</h3>
-        <ul class="projects-grid" id="projectsGrid">
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/ai-debate-colosseum" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener">AI Debate Colosseum</a></h4>
-            <p class="project-card-desc">Pit AI models against each other in structured, multi-round debates, then review the full transcripts.</p>
-            <ul class="project-card-tech"><li>LLMs</li><li>Python</li><li>Web</li></ul>
-          </li>
-
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/Resume_anaylzer" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://resume-analyzer-vrph.onrender.com/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://resume-analyzer-vrph.onrender.com/" target="_blank" rel="noopener">AI Resume Analyzer</a></h4>
-            <p class="project-card-desc">Upload a PDF resume and get instant AI feedback — multi-criteria scores, keyword matching, and rewritten bullet points to boost interview chances.</p>
-            <ul class="project-card-tech"><li>Python</li><li>Gradio</li><li>OpenAI API</li></ul>
-          </li>
-
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/ai-poker" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener">AI Poker Room</a></h4>
-            <p class="project-card-desc">Watch OpenAI, Anthropic, Gemini, and Grok models play five-card draw against each other — live betting, bluffs, and showdowns, with each model's reasoning streamed in.</p>
-            <ul class="project-card-tech"><li>Next.js</li><li>TypeScript</li><li>Multi-LLM</li></ul>
-          </li>
-
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/adsnap" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <button type="button" class="icon-btn" data-demo="adsnap" aria-label="Watch demo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-              </span>
-            </div>
-            <h4 class="project-card-title">AdSnap</h4>
-            <p class="project-card-desc">Point your phone at any item and ~2 minutes later get a full video commercial — cinematic shots, a slogan, an AI voiceover, and music.</p>
-            <ul class="project-card-tech"><li>Mobile app</li><li>React Native</li><li>Azure AI</li></ul>
-          </li>
-
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/fridge-ai" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <button type="button" class="icon-btn" data-demo="recipe" aria-label="Watch demo"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg></button>
-              </span>
-            </div>
-            <h4 class="project-card-title">recipe.AI</h4>
-            <p class="project-card-desc">Snap a photo of your fridge — Claude vision detects the ingredients and suggests dishes to cook now, each with full recipes and nutrition facts.</p>
-            <ul class="project-card-tech"><li>Mobile app</li><li>React Native</li><li>Claude Vision</li></ul>
-          </li>
-
-          <li class="project-card">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener">Charades vs. AI</a></h4>
-            <p class="project-card-desc">Act out words on your webcam while Claude watches and shouts guesses — land 10 words under 30 seconds each to win.</p>
-            <ul class="project-card-tech"><li>Claude API</li><li>Computer Vision</li><li>Webcam</li></ul>
-          </li>
-
-          <li class="project-card hidden-project">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/Hand-controlled-pong-game" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener">Hand Tennis</a></h4>
-            <p class="project-card-desc">Webcam hand-tracking tennis — each hand controls a paddle through real-time pose detection. No controller needed.</p>
-            <ul class="project-card-tech"><li>Computer Vision</li><li>Hand Tracking</li><li>JavaScript</li></ul>
-          </li>
-
-          <li class="project-card hidden-project">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/zyde.org" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://zyde.org/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://zyde.org/" target="_blank" rel="noopener">Zyde</a></h4>
-            <p class="project-card-desc">A web-design studio building conversion-focused websites for local businesses — I handle design, build, and SEO end to end.</p>
-            <ul class="project-card-tech"><li>Web Design</li><li>Full-stack</li><li>SEO</li></ul>
-          </li>
-
-          <li class="project-card hidden-project">
-            <div class="project-card-top">
-              <span class="folder-icon"><svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
-              <span class="project-card-links">
-                <a href="https://github.com/YutaB123/kitnations-website" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
-                <a href="https://kitnations.org/" target="_blank" rel="noopener" class="external" aria-label="External Link"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-              </span>
-            </div>
-            <h4 class="project-card-title"><a href="https://kitnations.org/" target="_blank" rel="noopener">KitNations</a></h4>
-            <p class="project-card-desc">A Next.js e-commerce store for World Cup 2026 national-team kits from all 48 nations, with worldwide shipping.</p>
-            <ul class="project-card-tech"><li>Next.js</li><li>React</li><li>E-commerce</li></ul>
-          </li>
-        </ul>
-        <button type="button" class="btn more-button" id="showMoreBtn">Show More</button>
-      </div>
-    </section>
-  </main>
-
-  <section id="contact" class="contact reveal">
-    <p class="contact-overline numbered-heading">What's Next?</p>
-    <h2 class="contact-title">Get In Touch</h2>
-    <p class="contact-desc">
-      I'm currently open to internships and new opportunities. Whether you have a question, a
-      project idea, or just want to say hi, my inbox is open — I'll get back to you.
-    </p>
-    <a class="btn contact-cta" href="mailto:yutabanishky@gmail.com">Say Hello</a>
-  </section>
-
-  <footer class="site-footer">
-    <ul class="footer-socials">
-      <li><a href="https://github.com/YutaB123" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a></li>
-      <li><a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></li>
-    </ul>
-    <p class="footer-credit">Designed &amp; Built by Yuta Banishky</p>
-  </footer>
+        <a class="archive-link" href="archive.html">View Full Project Archive <span aria-hidden="true">→</span></a>
+      </section>
+    </main>
+  </div>
 
   <!-- ===== App scripts ===== -->
   <script defer src="script.js"></script>
