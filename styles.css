@@ -140,9 +140,14 @@ a { color: inherit; text-decoration: none; }
     position: fixed;
     top: 0;
     left: 0;
-    width: min(40vw, 420px);
+    /* Kept in sync with .content's margin-left below - the content column is
+       offset by exactly the fixed sidebar's width. */
+    width: min(40vw, 480px);
     height: 100vh;
-    padding: 100px 50px 100px 100px;
+    /* Left inset scales with the viewport so both columns sit further from the
+       edge on wide screens, without ever dropping below the original 100px on
+       smaller desktops. */
+    padding: 100px 50px 100px clamp(100px, 10vw, 160px);
   }
 }
 
@@ -180,7 +185,7 @@ a { color: inherit; text-decoration: none; }
 
 .content { padding: 40px 25px 100px; }
 @media (min-width: 980px) {
-  .content { margin-left: min(40vw, 420px); padding: 100px 50px 150px 100px; }
+  .content { margin-left: min(40vw, 480px); padding: 100px 50px 150px clamp(100px, 10vw, 160px); }
 }
 
 .about-panel, .experience-panel, .projects-panel { max-width: 640px; margin-left: auto; margin-right: auto; }
@@ -262,6 +267,13 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Archive page ===== */
 .archive-content { max-width: 900px; margin-left: auto; margin-right: auto; }
+@media (min-width: 980px) {
+  /* The sidebar is position:fixed, so the content column has to be offset by
+     its width. .archive-content's `margin-left: auto` above would otherwise
+     win on source order and centre the table underneath the sidebar, where
+     the two columns' text visibly collide. Re-assert the offset here. */
+  .archive-content { margin-left: min(40vw, 480px); margin-right: auto; }
+}
 .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); margin-bottom: 20px; transition: var(--transition); }
 .back-link:hover, .back-link:focus-visible { opacity: 0.8; }
 .archive-heading { font-size: clamp(32px, 5vw, var(--fz-heading)); margin-bottom: 50px; }
