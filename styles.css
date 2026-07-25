@@ -27,6 +27,25 @@
   --border-radius: 4px;
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  /* Two-column geometry. --sidebar-w is shared by the fixed sidebar's width
+     and the content column's left offset, so they can never drift apart.
+     Defined as variables so the wider-screen overrides below apply to every
+     consumer (including .archive-content) without depending on source order. */
+  --sidebar-w: min(40vw, 480px);
+  --sidebar-inset: clamp(100px, 10vw, 160px);
+  --content-inset: clamp(100px, 10vw, 160px);
+}
+
+/* Once there's room, pull the left column much further in so it sits closer to
+   the content column instead of hugging the window edge. The sidebar widens
+   alongside its inset so the name keeps its two-line wrap. Below 1200px the
+   values above still apply, leaving smaller desktops untouched. */
+@media (min-width: 1200px) {
+  :root {
+    --sidebar-w: min(46vw, 620px);
+    --sidebar-inset: clamp(160px, 18vw, 300px);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -140,14 +159,9 @@ a { color: inherit; text-decoration: none; }
     position: fixed;
     top: 0;
     left: 0;
-    /* Kept in sync with .content's margin-left below - the content column is
-       offset by exactly the fixed sidebar's width. */
-    width: min(40vw, 480px);
+    width: var(--sidebar-w);
     height: 100vh;
-    /* Left inset scales with the viewport so both columns sit further from the
-       edge on wide screens, without ever dropping below the original 100px on
-       smaller desktops. */
-    padding: 100px 50px 100px clamp(100px, 10vw, 160px);
+    padding: 100px 50px 100px var(--sidebar-inset);
   }
 }
 
@@ -185,7 +199,7 @@ a { color: inherit; text-decoration: none; }
 
 .content { padding: 40px 25px 100px; }
 @media (min-width: 980px) {
-  .content { margin-left: min(40vw, 480px); padding: 100px 50px 150px clamp(100px, 10vw, 160px); }
+  .content { margin-left: var(--sidebar-w); padding: 100px 50px 150px var(--content-inset); }
 }
 
 .about-panel, .experience-panel, .projects-panel { max-width: 640px; margin-left: auto; margin-right: auto; }
@@ -272,7 +286,7 @@ a { color: inherit; text-decoration: none; }
      its width. .archive-content's `margin-left: auto` above would otherwise
      win on source order and centre the table underneath the sidebar, where
      the two columns' text visibly collide. Re-assert the offset here. */
-  .archive-content { margin-left: min(40vw, 480px); margin-right: auto; }
+  .archive-content { margin-left: var(--sidebar-w); margin-right: auto; }
 }
 .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-family: var(--font-mono); font-size: var(--fz-sm); margin-bottom: 20px; transition: var(--transition); }
 .back-link:hover, .back-link:focus-visible { opacity: 0.8; }
