@@ -2,7 +2,8 @@
   "use strict";
 
   function initSidebarNav() {
-    var links = Array.prototype.slice.call(document.querySelectorAll(".sidebar-nav a"));
+    var links = Array.prototype.slice.call(document.querySelectorAll(".sidebar-nav a"))
+      .filter(function (a) { return a.getAttribute("href").charAt(0) === "#"; });
     if (!links.length) return;
     var sections = links.map(function (a) {
       return document.querySelector(a.getAttribute("href"));
