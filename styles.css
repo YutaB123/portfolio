@@ -180,6 +180,18 @@ body { counter-reset: section; }
 @media (max-width: 640px) { .lb-nav { width: 40px; height: 40px; font-size: 1.5rem; } .lb-img { max-width: 80vw; } }
 
 
+/* ===== Cursor glow ===== */
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(100, 255, 218, 0.15), transparent 40%);
+}
+@media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-glow { display: none; }
+}
+
 /* ===== Accessibility ===== */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }

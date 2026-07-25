@@ -127,6 +127,20 @@
     });
   }
 
+  function initCursorGlow() {
+    var glow = document.querySelector(".cursor-glow");
+    if (!glow || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    var raf = null;
+    document.addEventListener("mousemove", function (e) {
+      if (raf) return;
+      raf = requestAnimationFrame(function () {
+        glow.style.setProperty("--x", e.clientX + "px");
+        glow.style.setProperty("--y", e.clientY + "px");
+        raf = null;
+      });
+    });
+  }
+
   function initReveal() {
     var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
     var items = document.querySelectorAll(".reveal");
@@ -151,6 +165,7 @@
     initHeroStagger();
     initTabs();
     initShowMore();
+    initCursorGlow();
     initReveal();
   });
 })();
