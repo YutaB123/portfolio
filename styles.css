@@ -266,6 +266,7 @@ a { color: inherit; text-decoration: none; }
 .archive-link { margin-top: 40px; }
 
 .projects-heading { font-size: var(--fz-heading); margin-bottom: 40px; }
+.projects-heading-secondary { margin-top: 80px; }
 
 .selected-project { display: grid; grid-template-columns: 200px 1fr; gap: 30px; margin-bottom: 60px; }
 @media (max-width: 600px) { .selected-project { grid-template-columns: 1fr; gap: 15px; } }
