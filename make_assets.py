@@ -78,7 +78,7 @@ def make_og():
     draw.text((x, 196), "Yuta", font=name, fill=WHITE)
     draw.text((x, 290), "Banishky", font=name, fill=WHITE)
 
-    role_lines = ["Software developer — AI applications,", "data analysis & full-stack web"]
+    role_lines = ["Data analyst — Python, SQL & pandas.", "Turning public data into decisions."]
     ry = 410
     for ln in role_lines:
         draw.text((x, ry), ln, font=role, fill=MUTED)
