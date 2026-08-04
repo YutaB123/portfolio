@@ -35,6 +35,28 @@ python -m http.server 8000
 ## Update later
 Edit `index.html`, commit, and push — Render auto-redeploys.
 
+## Résumé
+
+`resume/resume.html` is the editable source — the PDF is generated from it, so
+edit the HTML, never the PDF. To regenerate:
+
+```bash
+python build_resume.py
+```
+
+That writes `assets/resume.pdf` (what the site's "View Full Résumé" link serves)
+and copies it over `~/OneDrive/Documents/Resume/Yuta Resume.pdf`. Requires Chrome
+or Edge; no other dependency.
+
+The résumé must stay one page. `build_resume.py` prints the page count and warns
+if it spills to two — if it does, tighten `line-height` and the `h2` / `.entry`
+margins in `resume/resume.html` before reaching for a smaller font size.
+
+## Checking links
+
+`python check_links.py` verifies every local `src`/`href` in `index.html` and
+`archive.html` resolves to a file that exists. Run it after moving assets around.
+
 ## Editing content
 - **Bio / headline:** the `.hero` section in `index.html`.
 - **Projects:** each `<article class="card">` block. To change a card's color, swap its `banner-*` class (styles in `styles.css`).
