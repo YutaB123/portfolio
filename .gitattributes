@@ -1,0 +1,12 @@
+# Git sniffs "binary" by looking for a NUL byte early in the file. A PDF's
+# header is plain ASCII, so it gets misdetected as text and core.autocrlf
+# rewrites its line endings on checkout, corrupting it. Mark them explicitly.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.mp4   binary
+*.woff  binary
+*.woff2 binary
