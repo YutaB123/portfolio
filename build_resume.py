@@ -1,36 +1,25 @@
 """
-Render resume/resume.html to PDF via headless Chrome.
+Sync Yuta's resume PDF from OneDrive into the site.
 
-Writes:
-  assets/resume.pdf                    what the site's "View Full Resume" link serves
-  <OneDrive>/Documents/Resume/Yuta Resume.pdf   Yuta's working copy, if that folder exists
+The resume is authored outside this repo (Word -> PDF, in
+<OneDrive>/Documents/Resume). This script just mirrors the current version
+into assets/resume.pdf, which is what the site's "Download Resume" buttons
+serve.
+
+This used to generate the PDF from a resume/resume.html source via headless
+Chrome. That source drifted out of date and the generated PDF no longer
+matched the real resume, so the HTML pipeline was removed -- OneDrive is the
+single source of truth now.
 
 Run:  python build_resume.py
 """
-import os
 import shutil
-import subprocess
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).parent.resolve()
-SRC = ROOT / "resume" / "resume.html"
 OUT = ROOT / "assets" / "resume.pdf"
-ONEDRIVE = Path.home() / "OneDrive" / "Documents" / "Resume"
-
-BROWSER_CANDIDATES = [
-    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
-    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
-    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
-    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
-]
-
-
-def find_browser():
-    for path in BROWSER_CANDIDATES:
-        if os.path.exists(path):
-            return path
-    sys.exit("No Chrome or Edge found. Add its path to BROWSER_CANDIDATES.")
+SRC = Path.home() / "OneDrive" / "Documents" / "Resume" / "Yuta Banishky Resume.pdf"
 
 
 def page_count(pdf: Path) -> int:
@@ -41,37 +30,23 @@ def page_count(pdf: Path) -> int:
 
 def main():
     if not SRC.exists():
-        sys.exit(f"Missing source: {SRC}")
+        sys.exit(
+            f"Resume not found at {SRC}\n"
+            "If you renamed it, update SRC at the top of this script."
+        )
 
-    browser = find_browser()
+    head = SRC.open("rb").read(5)
+    if head != b"%PDF-":
+        sys.exit(f"{SRC} does not look like a PDF (starts with {head!r}).")
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
-
-    subprocess.run(
-        [
-            browser,
-            "--headless",
-            "--disable-gpu",
-            "--no-pdf-header-footer",
-            f"--print-to-pdf={OUT}",
-            SRC.as_uri(),
-        ],
-        check=True,
-    )
-
-    if not OUT.exists():
-        sys.exit("Chrome exited cleanly but wrote no PDF.")
+    shutil.copyfile(SRC, OUT)
 
     pages = page_count(OUT)
-    print(f"wrote {OUT} ({OUT.stat().st_size:,} bytes, {pages} page(s))")
+    print(f"copied {SRC}\n     -> {OUT} ({OUT.stat().st_size:,} bytes, {pages} page(s))")
     if pages != 1:
-        print(f"WARNING: expected 1 page, got {pages}. Tighten resume.html font-size/line-height.")
-
-    if ONEDRIVE.is_dir():
-        dest = ONEDRIVE / "Yuta Resume.pdf"
-        shutil.copyfile(OUT, dest)
-        print(f"copied to {dest}")
-    else:
-        print(f"skipped OneDrive copy - {ONEDRIVE} not found")
+        print(f"WARNING: expected 1 page, got {pages}.")
+    print("\nCommit assets/resume.pdf and push to deploy it.")
 
 
 if __name__ == "__main__":

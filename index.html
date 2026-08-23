@@ -133,14 +133,16 @@
               <p class="proj-meta"><span>2026</span></p>
               <h4 class="proj-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                A husky-themed study buddy wired to your UW Canvas. Chat to see what's due and your
-                grades, ask about any syllabus, and spin up quizzes, flashcards, study plans, and
-                Word docs for your assignments — plus a bring-your-own-API-key architecture that
-                keeps it free to run at scale.
+                A husky-themed study buddy wired to your UW Canvas — chat to see what's due, ask
+                about any syllabus, and generate quizzes, flashcards, and study plans from your
+                course material. Fixing a SQLite concurrency bug across 10 data stores with
+                per-thread connections and WAL mode cut the error rate under load from 35% to 0%,
+                verified by a TDD stress suite; token-level accounting put each turn at $0.0475 and
+                identified prompt caching as a 74% cost reduction.
               </p>
               <button class="proj-demo" type="button" data-demo="dubly">View walkthrough</button>
               <ul class="tech-pill-list">
-                <li class="tech-pill">Next.js</li><li class="tech-pill">Twilio</li><li class="tech-pill">Canvas LMS API</li><li class="tech-pill">Anthropic Claude API</li>
+                <li class="tech-pill">Python</li><li class="tech-pill">FastAPI</li><li class="tech-pill">SQLite</li><li class="tech-pill">Next.js</li><li class="tech-pill">Claude API</li><li class="tech-pill">Whisper</li>
               </ul>
             </div>
           </article>
@@ -244,8 +246,9 @@
               <p class="proj-desc">
                 Real-time multiplayer chess — share a 6-character room code, pick a time control
                 (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
-                WebSockets. Server-authoritative move validation blocks illegal moves and guarantees
-                fair play across concurrent clients.
+                WebSockets. The backend is server-authoritative, validating every move and syncing
+                state between players; load-tested to 3,000 concurrent games and 374K+ moves with
+                zero state desynchronization and 1.89 ms p50 latency.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Node.js</li><li class="tech-pill">Express</li><li class="tech-pill">Socket.IO</li><li class="tech-pill">chess.js</li>
@@ -450,29 +453,17 @@
           <span class="section-rule" aria-hidden="true"></span>
         </div>
 
-        <h3 class="exp-group-heading reveal">Relevant Experience</h3>
+        <h3 class="exp-group-heading reveal">Professional Experience</h3>
         <div class="exp-list">
           <div class="exp-entry reveal">
             <p class="exp-range">Jan 2026 – Present</p>
             <div class="exp-body">
-              <h4><span>Volunteer Data Analyst</span> <span class="company">· University Food Bank</span></h4>
+              <h4><span>Data Analyst</span> <span class="company">· Seattle University Food Bank</span></h4>
               <ul>
-                <li>Analyzed distribution data across 340+ weekly orders to identify demand patterns, reducing stockouts on high-turnover items by 18% and cutting overstock waste by 12% over one quarter.</li>
-                <li>Support inventory management for a food bank serving 200+ households weekly, including students, community members, and unhoused individuals experiencing food insecurity.</li>
+                <li>Analyzed 340+ weekly orders in PostgreSQL to surface demand patterns, cutting stockouts 18% and overstock waste 12% in one quarter.</li>
+                <li>Built a logistic regression model in Python to forecast restocking by item category; deployed it as a REST API handling ~1,000 requests/day for 200+ households weekly.</li>
               </ul>
-              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">SQL</li><li class="tech-pill">Excel</li></ul>
-            </div>
-          </div>
-
-          <div class="exp-entry reveal">
-            <p class="exp-range">Nov 2025 – May 2026</p>
-            <div class="exp-body">
-              <h4><span>Project Officer</span> <span class="company">· UW Data Science Club</span></h4>
-              <ul>
-                <li>Coordinated project timelines across 6 teams of 4–5 members, delivering 3 completed projects per quarter for a 50-member club.</li>
-                <li>Organized club meetings and workshops, connecting members with project opportunities and technical resources to build practical data science skills.</li>
-              </ul>
-              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Data Analysis</li></ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">PostgreSQL</li><li class="tech-pill">Logistic regression</li><li class="tech-pill">REST API</li></ul>
             </div>
           </div>
 
@@ -481,56 +472,35 @@
             <div class="exp-body">
               <h4><span>Founder &amp; Instructor</span> <span class="company">· Bellevue Coding</span></h4>
               <ul>
-                <li>Founded and taught a free weekly Python program for children ages 8–14 at the Bellevue Library, designing all curriculum, lesson plans, and practice exercises from scratch in Python, VS Code, and Scratch.</li>
-                <li>Grew enrollment from 3 to 7 students per session through consistent, hands-on weekly instruction and informal office hours tailored to each student's pace.</li>
+                <li>Founded and taught a free weekly Python program for ages 8–14 at the Bellevue Library, growing enrollment 133%.</li>
+                <li>Extended the curriculum to ML and analytics pipelines for ages 13–17.</li>
               </ul>
-              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">VS Code</li><li class="tech-pill">Scratch</li></ul>
-            </div>
-          </div>
-
-          <div class="exp-entry reveal">
-            <p class="exp-range">Sep 2023 – Jun 2025</p>
-            <div class="exp-body">
-              <h4><span>Peer Tutor, Coding &amp; Computer Science</span> <span class="company">· Bellevue High School</span></h4>
-              <ul>
-                <li>Tutored 15 students per week in introductory programming and statistics, holding 6 hours of sessions weekly across 2 semesters; 80% of tutees reported improved course grades.</li>
-              </ul>
-              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Statistics</li></ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Machine learning</li><li class="tech-pill">Analytics</li></ul>
             </div>
           </div>
         </div>
 
-        <h3 class="exp-group-heading exp-group-heading-other reveal">Other Experience</h3>
+        <h3 class="exp-group-heading exp-group-heading-other reveal">Leadership &amp; Activities</h3>
         <div class="exp-list">
           <div class="exp-entry reveal">
-            <p class="exp-range">Nov 2023 – May 2025</p>
+            <p class="exp-range">Sep 2025 – Present</p>
             <div class="exp-body">
-              <h4><span>Team Captain &amp; Head Student Coach</span> <span class="company">· Special Olympics Unified Champion Schools</span></h4>
+              <h4><span>Project Officer</span> <span class="company">· UW Data Science Club</span></h4>
               <ul>
-                <li>Coached and mentored teammates with intellectual and developmental disabilities, adapting communication style and drill structure to each athlete's individual needs.</li>
+                <li>Led a 5-person team building a linear regression pipeline on 2,000+ cleaned HUD and Census records, finding an R<sup>2</sup> of 0.72 between homelessness and income across greater Seattle, visualized in Tableau.</li>
               </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Linear regression</li><li class="tech-pill">Tableau</li><li class="tech-pill">HUD / Census data</li></ul>
             </div>
           </div>
 
           <div class="exp-entry reveal">
-            <p class="exp-range">Mar 2024 – May 2025</p>
+            <p class="exp-range">Mar 2025 – Present</p>
             <div class="exp-body">
-              <h4><span>Shift Manager</span> <span class="company">· Mochinut, Bellevue, WA</span></h4>
+              <h4><span>Member</span> <span class="company">· Machine Learning @ UW</span></h4>
               <ul>
-                <li>Managed shift operations for a 5-person team at a high-traffic mall location serving roughly 300 customers daily, owning all closing duties and register reconciliation.</li>
-                <li>Drove a 5–10% increase in shift sales through upselling and operational efficiency.</li>
+                <li>Built a real-time sentiment pipeline for Reddit comment streams with Python and PRAW, fine-tuning DistilBERT and deploying via FastAPI on AWS EC2 with a Streamlit dashboard.</li>
               </ul>
-            </div>
-          </div>
-
-          <div class="exp-entry reveal">
-            <p class="exp-range">Mar 2024 – Aug 2024</p>
-            <div class="exp-body">
-              <h4><span>Founder &amp; Organizer</span> <span class="company">· Wilburton Soccer</span></h4>
-              <ul>
-                <li>Founded and operated a youth soccer training program running practices three times weekly, with a paid membership and per-session pricing model and self-run marketing.</li>
-                <li>Grew participation from 2 to 8+ players per session through self-directed community outreach.</li>
-              </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">PRAW</li><li class="tech-pill">DistilBERT</li><li class="tech-pill">FastAPI</li><li class="tech-pill">AWS EC2</li><li class="tech-pill">Streamlit</li></ul>
             </div>
           </div>
         </div>

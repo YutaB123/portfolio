@@ -10,7 +10,6 @@ step, no dependencies.
 - `styles.css` — the only stylesheet; design tokens live in `:root` at the top
 - `animations.js` — topbar scrollspy, cursor glow, staggered scroll reveal
 - `script.js` — the project demo lightbox (`DEMOS` map + overlay)
-- `resume/resume.html` — editable résumé source; the PDF is generated from it
 - `render.yaml` — Render Static Site config
 - `assets/screenshots/` — one image per project card
 - `assets/demos/` — step images for the lightbox walkthroughs
@@ -59,24 +58,26 @@ that the experience section or the résumé already backs up.
 
 ## Résumé
 
-`resume/resume.html` is the editable source — the PDF is generated from it, so
-edit the HTML, never the PDF. To regenerate:
+The résumé is authored **outside this repo**, in
+`~/OneDrive/Documents/Resume/Yuta Banishky Resume.pdf`. That file is the single
+source of truth. To pull the current version into the site:
 
 ```bash
 python build_resume.py
 ```
 
-That writes `assets/resume.pdf` (what the "Download Résumé" buttons serve) and
-copies it over `~/OneDrive/Documents/Resume/Yuta Resume.pdf`. Requires Chrome or
-Edge; no other dependency.
+That copies it to `assets/resume.pdf` (what the "Download Résumé" buttons
+serve) and warns if it isn't one page. Commit `assets/resume.pdf` and push to
+deploy it.
 
-The résumé must stay one page. `build_resume.py` prints the page count and warns
-if it spills to two — if it does, tighten `line-height` and the `h2` / `.entry`
-margins in `resume/resume.html` before reaching for a smaller font size.
+There used to be a `resume/resume.html` source that generated the PDF via
+headless Chrome. It drifted out of date and the generated PDF stopped matching
+the real résumé, so it was removed.
 
-The `#resume` section on the site duplicates only Education and Technical Skills
-from the PDF. Experience and Projects are already on the page in full, so keep
-them out of that section rather than adding a third copy.
+The `#resume` section in `index.html` duplicates only Education, Achievements,
+and Technical Skills from the PDF — Experience and Projects are already on the
+page in full. **When the résumé changes, update that section too**; it is hand-
+maintained and nothing checks it against the PDF.
 
 ## Brand assets
 
