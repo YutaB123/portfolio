@@ -291,7 +291,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .hero-desc {
   margin-top: var(--space-4);
-  max-width: 46ch;
+  max-width: 54ch;
   font-size: var(--fz-lg);
   color: var(--muted);
 }
