@@ -712,7 +712,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 @media (min-width: 900px) {
   .resume-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .resume-card--skills { grid-column: span 2; }
+  .resume-card--achievements { grid-column: span 2; }
+  .resume-card--skills { grid-column: span 3; }
   .resume-card--download { grid-column: span 3; }
 }
 
@@ -748,6 +749,21 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: var(--fz-xxs);
   color: var(--accent);
 }
+.resume-achievements li {
+  position: relative;
+  padding-left: var(--space-5);
+  margin-bottom: var(--space-3);
+  font-size: var(--fz-sm);
+}
+.resume-achievements li:last-child { margin-bottom: 0; }
+.resume-achievements li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+.resume-achievements .em { color: var(--fg); font-weight: 500; }
+
 .resume-skill-group { margin-bottom: var(--space-4); }
 .resume-skill-group:last-child { margin-bottom: 0; }
 .resume-skill-group dt {
