@@ -42,6 +42,7 @@
   let overlay, mediaEl, capEl, counterEl, dotsEl, prevBtn, nextBtn;
   let steps = [];
   let idx = 0;
+  let lastTrigger = null;
 
   function build() {
     overlay = document.createElement("div");
@@ -98,9 +99,10 @@
     render();
   }
 
-  function open(key) {
+  function open(key, trigger) {
     const demo = DEMOS[key];
     if (!demo) return;
+    lastTrigger = trigger || null;
     steps = demo.steps;
     idx = 0;
     render();
@@ -112,9 +114,10 @@
     overlay.classList.remove("lb-open");
     document.body.style.overflow = "";
     mediaEl.innerHTML = ""; // stop any video
+    // Send keyboard users back to the button they came from.
+    if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
   }
 
-  // Let the projects CircularGallery open these same lightboxes on tap.
   window.openProjectDemo = open;
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -122,7 +125,7 @@
     document.querySelectorAll("[data-demo]").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-        open(btn.getAttribute("data-demo"));
+        open(btn.getAttribute("data-demo"), btn);
       });
     });
   });

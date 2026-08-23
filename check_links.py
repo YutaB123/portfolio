@@ -3,7 +3,7 @@ import pathlib
 import re
 import sys
 
-PAGES = ("index.html", "archive.html")
+PAGES = ("index.html",)
 missing = []
 
 for page in PAGES:

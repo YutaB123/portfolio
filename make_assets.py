@@ -11,11 +11,13 @@ Run:  python make_assets.py
 """
 from PIL import Image, ImageDraw, ImageFont
 
-NAVY = (30, 58, 138)        # --accent  #1e3a8a
-NAVY_DARK = (23, 37, 84)    # --accent-dark #172554
-INK = (17, 24, 39)
-WHITE = (255, 255, 255)
-MUTED = (197, 205, 226)     # soft off-white for secondary text
+# Mirrors the site palette in styles.css (charcoal surface + amber accent).
+SURFACE = (20, 20, 25)      # --surface  #141419
+BG = (11, 11, 15)           # --bg       #0b0b0f
+AMBER = (245, 158, 11)      # --accent   #f59e0b
+INK = (26, 18, 6)           # text on amber
+WHITE = (244, 244, 245)     # --fg       #f4f4f5
+MUTED = (161, 161, 170)     # --muted    #a1a1aa
 
 FONTS = r"C:\Windows\Fonts"
 
@@ -54,17 +56,17 @@ def cover_crop(im, target):
 
 def make_og():
     W, H = 1200, 630
-    card = vgradient((W, H), NAVY, NAVY_DARK)
+    card = vgradient((W, H), SURFACE, BG)
     draw = ImageDraw.Draw(card)
 
     # --- right-side headshot in a rounded frame (mirrors the hero) ---
     photo_w, photo_h = 360, 470
     px, py = W - photo_w - 70, (H - photo_h) // 2
-    shot = cover_crop(Image.open("assets/headshot.jpg").convert("RGB"), (photo_w, photo_h))
+    shot = cover_crop(Image.open("assets/smile.jpg").convert("RGB"), (photo_w, photo_h))
     mask = rounded_mask((photo_w, photo_h), 28)
     # subtle white border behind the photo
     draw.rounded_rectangle([px - 4, py - 4, px + photo_w + 4, py + photo_h + 4],
-                           28 + 4, fill=(255, 255, 255))
+                           28 + 4, fill=AMBER)
     card.paste(shot, (px, py), mask)
 
     # --- left-side text column ---
@@ -74,7 +76,7 @@ def make_og():
     role = font("segoeui.ttf", 30)
     url = font("segoeuib.ttf", 28)
 
-    draw.text((x, 150), "INFORMATICS @ UW  ·  DATA SCIENCE", font=eyebrow, fill=MUTED)
+    draw.text((x, 150), "INFORMATICS @ UW  ·  DATA SCIENCE", font=eyebrow, fill=AMBER)
     draw.text((x, 196), "Yuta", font=name, fill=WHITE)
     draw.text((x, 290), "Banishky", font=name, fill=WHITE)
 
@@ -84,17 +86,16 @@ def make_og():
         draw.text((x, ry), ln, font=role, fill=MUTED)
         ry += 40
 
-    draw.text((x, 500), "yutabanishky.com", font=url, fill=WHITE)
+    draw.text((x, 500), "yutabanishky.com", font=url, fill=AMBER)
 
     card.save("assets/og-image.png")
     print("wrote assets/og-image.png", card.size)
 
 
 def monogram(size, radius_ratio=0.22, fsize_ratio=0.5):
-    img = Image.new("RGB", (size, size), NAVY)
     # round the corners by compositing over transparent where saved as PNG
     out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    grad = vgradient((size, size), NAVY, NAVY_DARK).convert("RGBA")
+    grad = vgradient((size, size), AMBER, (217, 119, 6)).convert("RGBA")
     mask = rounded_mask((size, size), int(size * radius_ratio))
     out.paste(grad, (0, 0), mask)
     draw = ImageDraw.Draw(out)
@@ -102,7 +103,7 @@ def monogram(size, radius_ratio=0.22, fsize_ratio=0.5):
     text = "YB"
     bbox = draw.textbbox((0, 0), text, font=f)
     tw, th = bbox[2] - bbox[0], bbox[3] - bbox[1]
-    draw.text(((size - tw) / 2 - bbox[0], (size - th) / 2 - bbox[1]), text, font=f, fill=WHITE)
+    draw.text(((size - tw) / 2 - bbox[0], (size - th) / 2 - bbox[1]), text, font=f, fill=INK)
     return out
 
 

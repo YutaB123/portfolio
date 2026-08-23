@@ -3,19 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Mark JS available so scroll-reveal only hides content when it can be revealed.
-       Gate the cinematic intro behind .is-loading, with a safety timeout that always
-       reveals content even if a CDN/script fails to load. -->
-  <script>
-    (function () {
-      var d = document.documentElement;
-      d.classList.add("js");
-      if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        d.classList.add("is-loading");
-        setTimeout(function () { d.classList.remove("is-loading"); }, 2600);
-      }
-    })();
-  </script>
   <title>Yuta Banishky — Data Analyst</title>
   <meta name="description" content="Portfolio of Yuta Banishky — Informatics student at the University of Washington (Data Science track). Data analysis in Python, SQL, and pandas, turning public datasets into decisions." />
 
@@ -45,303 +32,597 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="cursor-glow" aria-hidden="true"></div>
 
-  <div class="layout">
-    <header class="sidebar" id="top">
-      <div class="sidebar-main">
-        <div class="sidebar-top">
-          <h1 class="sidebar-name"><a href="#top">Yuta Banishky</a></h1>
-          <h2 class="sidebar-title">Data Analyst</h2>
-          <p class="sidebar-desc">
-            I turn messy public datasets into decisions people can act on — Python, SQL, and
-            pandas.
-          </p>
-        </div>
-        <nav class="sidebar-nav" aria-label="In-page navigation">
-          <ul>
-            <li><a href="#about"><span class="nav-line"></span><span class="nav-label">About</span></a></li>
-            <li><a href="#experience"><span class="nav-line"></span><span class="nav-label">Experience</span></a></li>
-            <li><a href="#work"><span class="nav-line"></span><span class="nav-label">Projects</span></a></li>
-          </ul>
-        </nav>
-      </div>
-      <ul class="sidebar-socials" aria-label="Social links">
-        <li><a href="https://github.com/YutaB123" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
-        </a></li>
-        <li><a href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a></li>
-        <li><a href="mailto:yutabanishky@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-        </a></li>
-      </ul>
-    </header>
-
-    <main class="content">
-      <section id="about" class="about-panel reveal">
-        <p>
-          Hello! I'm Yuta, a B.S. Informatics student at the University of Washington on the Data
-          Science track, expected to graduate in June 2029.
-        </p>
-        <p>
-          I'm drawn to the part of analysis that actually changes a decision. Volunteering at the
-          <span class="about-highlight">University Food Bank</span>, that meant working through
-          distribution data to find which items kept running out — and cutting stockouts on them by
-          18%. Analyzing Seattle's traffic collisions, it meant weighting 221,266 records by how
-          severe each crash was instead of just counting them, which surfaced a cyclist hotspot
-          that raw crash counts had buried.
-        </p>
-        <p>
-          Before college I founded <span class="about-highlight">Bellevue Coding</span>, a free
-          weekly Python program for kids ages 8–14 at the Bellevue Library, and
-          <span class="about-highlight">Wilburton Soccer</span>, a youth training program I built
-          and ran from scratch. I still build software — mostly tools that put data or AI in front
-          of people — and most of it is live and linked below.
-        </p>
-        <p>
-          Currently I'm taking coursework in data programming and statistics at UW, and spending my
-          own time getting sharper with SQL.
-        </p>
-        <p>Here are a few technologies I've been working with recently:</p>
-        <ul class="skills-list">
-          <li>Python</li>
-          <li>SQL</li>
-          <li>pandas / Matplotlib</li>
-          <li>Excel</li>
-          <li>Statistical analysis</li>
-          <li>Next.js / React</li>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-brand" href="#top">Yuta Banishky</a>
+      <nav class="topbar-nav" aria-label="In-page navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#resume">Résumé</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-      </section>
+      </nav>
+    </div>
+  </header>
 
-      <section id="experience" class="experience-panel reveal">
-        <h3 class="exp-group-heading">Relevant Experience</h3>
-
-        <div class="exp-entry">
-          <p class="exp-range">Jan 2026 – Present</p>
-          <div class="exp-body">
-            <h4><span>Volunteer Data Analyst</span> <span class="company">· University Food Bank</span></h4>
-            <ul>
-              <li>Analyzed distribution data across 340+ weekly orders to identify demand patterns, reducing stockouts on high-turnover items by 18% and cutting overstock waste by 12% over one quarter.</li>
-              <li>Support inventory management for a food bank serving 200+ households weekly, including students, community members, and unhoused individuals experiencing food insecurity.</li>
-            </ul>
-            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">SQL</li><li class="tech-pill">Excel</li></ul>
-          </div>
-        </div>
-
-        <div class="exp-entry">
-          <p class="exp-range">Nov 2025 – May 2026</p>
-          <div class="exp-body">
-            <h4><span>Project Officer</span> <span class="company">· UW Data Science Club</span></h4>
-            <ul>
-              <li>Coordinated project timelines across 6 teams of 4–5 members, delivering 3 completed projects per quarter for a 50-member club.</li>
-              <li>Organized club meetings and workshops, connecting members with project opportunities and technical resources to build practical data science skills.</li>
-            </ul>
-            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Data Analysis</li></ul>
-          </div>
-        </div>
-
-        <div class="exp-entry">
-          <p class="exp-range">Jan 2025 – Jun 2025</p>
-          <div class="exp-body">
-            <h4><span>Founder &amp; Instructor</span> <span class="company">· Bellevue Coding</span></h4>
-            <ul>
-              <li>Founded and taught a free weekly Python program for children ages 8–14 at the Bellevue Library, designing all curriculum, lesson plans, and practice exercises from scratch in Python, VS Code, and Scratch.</li>
-              <li>Grew enrollment from 3 to 7 students per session through consistent, hands-on weekly instruction and informal office hours tailored to each student's pace.</li>
-            </ul>
-            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">VS Code</li><li class="tech-pill">Scratch</li></ul>
-          </div>
-        </div>
-
-        <div class="exp-entry">
-          <p class="exp-range">Sep 2023 – Jun 2025</p>
-          <div class="exp-body">
-            <h4><span>Peer Tutor, Coding &amp; Computer Science</span> <span class="company">· Bellevue High School</span></h4>
-            <ul>
-              <li>Tutored 15 students per week in introductory programming and statistics, holding 6 hours of sessions weekly across 2 semesters; 80% of tutees reported improved course grades.</li>
-            </ul>
-            <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Statistics</li></ul>
-          </div>
-        </div>
-
-        <h3 class="exp-group-heading exp-group-heading-other">Other Experience</h3>
-
-        <div class="exp-entry">
-          <p class="exp-range">Nov 2023 – May 2025</p>
-          <div class="exp-body">
-            <h4><span>Team Captain &amp; Head Student Coach</span> <span class="company">· Special Olympics Unified Champion Schools</span></h4>
-            <ul>
-              <li>Coached and mentored teammates with intellectual and developmental disabilities, adapting communication style and drill structure to each athlete's individual needs.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-entry">
-          <p class="exp-range">Mar 2024 – May 2025</p>
-          <div class="exp-body">
-            <h4><span>Shift Manager</span> <span class="company">· Mochinut, Bellevue, WA</span></h4>
-            <ul>
-              <li>Managed shift operations for a 5-person team at a high-traffic mall location serving roughly 300 customers daily, owning all closing duties and register reconciliation.</li>
-              <li>Drove a 5–10% increase in shift sales through upselling and operational efficiency.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="exp-entry">
-          <p class="exp-range">Mar 2024 – Aug 2024</p>
-          <div class="exp-body">
-            <h4><span>Founder &amp; Organizer</span> <span class="company">· Wilburton Soccer</span></h4>
-            <ul>
-              <li>Founded and operated a youth soccer training program running practices three times weekly, with a paid membership and per-session pricing model and self-run marketing.</li>
-              <li>Grew participation from 2 to 8+ players per session through self-directed community outreach.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="work" class="projects-panel reveal">
-        <a class="resume-link" href="assets/resume.pdf" target="_blank" rel="noopener">View Full Résumé <span aria-hidden="true">→</span></a>
-
-        <h3 class="projects-heading">Data &amp; Analysis</h3>
-
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://github.com/YutaB123/seattle_collision_analysis" target="_blank" rel="noopener">
-            <img src="assets/screenshots/collisions.jpg" alt="Line chart of average Seattle crash severity by hour of day, peaking in the early morning and evening commute" loading="lazy" width="1200" height="600" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://github.com/YutaB123/seattle_collision_analysis" target="_blank" rel="noopener">Seattle Traffic Collision Analysis <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              I live in Seattle, and I wanted to figure out where the city should actually be
-              spending its safety budget. So I analyzed 221,266 traffic collision records to find
-              out. Instead of just counting crashes, I built a scoring system that weighs how
-              severe each one was, which showed that cyclist crashes along the Burke-Gilman Trail
-              were a bigger problem than raw numbers suggested. I also checked whether missing
-              streetlights were a cause, since that seemed like an easy fix, but the data showed
-              they weren't.
+  <main>
+    <!-- ===================== Hero ===================== -->
+    <section class="hero" id="top">
+      <div class="container">
+        <div class="hero-grid reveal">
+          <div>
+            <p class="hero-eyebrow"><span class="hero-dot" aria-hidden="true"></span> Informatics @ UW · Data Science track</p>
+            <h1>Yuta Banishky</h1>
+            <p class="hero-role">Data Analyst</p>
+            <p class="hero-desc">
+              I turn messy public datasets into decisions people can act on — Python, SQL, and
+              pandas.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Matplotlib</li><li class="tech-pill">Open Data</li>
-            </ul>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="assets/resume.pdf" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+                Download Résumé
+              </a>
+              <a class="btn" href="mailto:yutabanishky@gmail.com">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+                Email
+              </a>
+              <a class="btn" href="https://github.com/YutaB123" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+                GitHub
+              </a>
+              <a class="btn" href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-photo">
+            <img src="assets/smile.jpg" alt="Yuta Banishky" width="520" height="789" />
           </div>
         </div>
 
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">
-            <img src="assets/screenshots/csv.jpg" alt="AI CSV Data Analyzer — plain-English questions answered with generated charts" loading="lazy" width="1280" height="800" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              Upload a CSV, ask a question in plain English, and get back the chart that answers
-              it. A three-stage pipeline decides what to compute, runs the pandas itself, then
-              explains the result — and only the column names ever leave your machine, so the raw
-              rows stay on-device.
+        <ul class="stat-strip reveal">
+          <li class="stat">
+            <span class="stat-num">14</span>
+            <span class="stat-label">projects built and shipped</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num">340+</span>
+            <span class="stat-label">weekly food bank orders analyzed</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num">18%</span>
+            <span class="stat-label">fewer stockouts on high-turnover items</span>
+          </li>
+          <li class="stat">
+            <span class="stat-num">12%</span>
+            <span class="stat-label">less overstock waste in one quarter</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-num">01</span>
+          <h2>About</h2>
+          <span class="section-rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="about-grid reveal">
+          <div class="about-prose">
+            <p>
+              Hello! I'm Yuta, a B.S. Informatics student at the University of Washington on the Data
+              Science track, expected to graduate in June 2029.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Gradio</li><li class="tech-pill">OpenAI GPT-4o-mini</li>
-            </ul>
-          </div>
-        </div>
-
-        <h3 class="projects-heading projects-heading-secondary">Software &amp; Product Projects</h3>
-
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">
-            <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy wired to UW Canvas" loading="lazy" width="1200" height="528" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              A husky-themed study buddy wired to your UW Canvas. Chat to see what's due and your
-              grades, ask about any syllabus, and spin up quizzes, flashcards, study plans, and
-              Word docs for your assignments — plus a bring-your-own-API-key architecture that
-              keeps it free to run at scale.
+            <p>
+              I'm drawn to the part of analysis that actually changes a decision. Volunteering at the
+              <span class="about-highlight">University Food Bank</span>, that meant working through
+              distribution data to find which items kept running out — and cutting stockouts on them by
+              18%. Analyzing Seattle's traffic collisions, it meant weighting 221,266 records by how
+              severe each crash was instead of just counting them, which surfaced a cyclist hotspot
+              that raw crash counts had buried.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Next.js</li><li class="tech-pill">Twilio</li><li class="tech-pill">Canvas LMS API</li><li class="tech-pill">Anthropic Claude API</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener">
-            <img src="assets/screenshots/poker.jpg" alt="AI Poker Room — LLMs playing five-card draw against each other" loading="lazy" width="1280" height="844" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener">AI Poker Room <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              Watch OpenAI, Anthropic, Gemini, and Grok models play five-card draw against each
-              other — live betting, bluffs, and showdowns, with each model's reasoning streamed in
-              as it decides whether to hold, raise, or fold.
+            <p>
+              Before college I founded <span class="about-highlight">Bellevue Coding</span>, a free
+              weekly Python program for kids ages 8–14 at the Bellevue Library, and
+              <span class="about-highlight">Wilburton Soccer</span>, a youth training program I built
+              and ran from scratch. I still build software — mostly tools that put data or AI in front
+              of people — and most of it is live and linked below.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Next.js</li><li class="tech-pill">TypeScript</li><li class="tech-pill">Multi-LLM</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">
-            <img src="assets/screenshots/chess.jpg" alt="Yutachess — real-time multiplayer chess" loading="lazy" width="1280" height="800" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Yutachess <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              Real-time multiplayer chess — share a 6-character room code, pick a time control
-              (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
-              WebSockets. Server-authoritative move validation blocks illegal moves and guarantees
-              fair play across concurrent clients.
+            <p>
+              Currently I'm taking coursework in data programming and statistics at UW, and spending my
+              own time getting sharper with SQL.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Node.js</li><li class="tech-pill">Express</li><li class="tech-pill">Socket.IO</li><li class="tech-pill">chess.js</li>
+          </div>
+
+          <div class="tools-card">
+            <h3>Tools I reach for</h3>
+            <ul class="skills-list">
+              <li>Python</li>
+              <li>SQL</li>
+              <li>pandas / Matplotlib</li>
+              <li>Excel</li>
+              <li>Statistical analysis</li>
+              <li>Next.js / React</li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://cinemate-d8bc.onrender.com" target="_blank" rel="noopener">
-            <img src="assets/screenshots/cinemate.jpg" alt="CineMate — a retro movie-theater themed recommendation app" loading="lazy" width="1280" height="800" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://cinemate-d8bc.onrender.com" target="_blank" rel="noopener">CineMate <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              A movie night decided for you, staged inside a retro cinema. Filter by genre, mood,
-              runtime, rating, streaming service, and decade, then let it play titles across the
-              big screen — auto-skipping like channel surfing — with a watchlist, star-rated
-              history, and trailer links. Accounts and avatars run on Supabase Auth and Azure,
-              with a one-tap guest mode.
+    <!-- ===================== Experience ===================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-num">02</span>
+          <h2>Experience</h2>
+          <span class="section-rule" aria-hidden="true"></span>
+        </div>
+
+        <h3 class="exp-group-heading reveal">Relevant Experience</h3>
+        <div class="exp-list">
+          <div class="exp-entry reveal">
+            <p class="exp-range">Jan 2026 – Present</p>
+            <div class="exp-body">
+              <h4><span>Volunteer Data Analyst</span> <span class="company">· University Food Bank</span></h4>
+              <ul>
+                <li>Analyzed distribution data across 340+ weekly orders to identify demand patterns, reducing stockouts on high-turnover items by 18% and cutting overstock waste by 12% over one quarter.</li>
+                <li>Support inventory management for a food bank serving 200+ households weekly, including students, community members, and unhoused individuals experiencing food insecurity.</li>
+              </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">SQL</li><li class="tech-pill">Excel</li></ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <p class="exp-range">Nov 2025 – May 2026</p>
+            <div class="exp-body">
+              <h4><span>Project Officer</span> <span class="company">· UW Data Science Club</span></h4>
+              <ul>
+                <li>Coordinated project timelines across 6 teams of 4–5 members, delivering 3 completed projects per quarter for a 50-member club.</li>
+                <li>Organized club meetings and workshops, connecting members with project opportunities and technical resources to build practical data science skills.</li>
+              </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Data Analysis</li></ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <p class="exp-range">Jan 2025 – Jun 2025</p>
+            <div class="exp-body">
+              <h4><span>Founder &amp; Instructor</span> <span class="company">· Bellevue Coding</span></h4>
+              <ul>
+                <li>Founded and taught a free weekly Python program for children ages 8–14 at the Bellevue Library, designing all curriculum, lesson plans, and practice exercises from scratch in Python, VS Code, and Scratch.</li>
+                <li>Grew enrollment from 3 to 7 students per session through consistent, hands-on weekly instruction and informal office hours tailored to each student's pace.</li>
+              </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">VS Code</li><li class="tech-pill">Scratch</li></ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <p class="exp-range">Sep 2023 – Jun 2025</p>
+            <div class="exp-body">
+              <h4><span>Peer Tutor, Coding &amp; Computer Science</span> <span class="company">· Bellevue High School</span></h4>
+              <ul>
+                <li>Tutored 15 students per week in introductory programming and statistics, holding 6 hours of sessions weekly across 2 semesters; 80% of tutees reported improved course grades.</li>
+              </ul>
+              <ul class="tech-pill-list"><li class="tech-pill">Python</li><li class="tech-pill">Statistics</li></ul>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="exp-group-heading exp-group-heading-other reveal">Other Experience</h3>
+        <div class="exp-list">
+          <div class="exp-entry reveal">
+            <p class="exp-range">Nov 2023 – May 2025</p>
+            <div class="exp-body">
+              <h4><span>Team Captain &amp; Head Student Coach</span> <span class="company">· Special Olympics Unified Champion Schools</span></h4>
+              <ul>
+                <li>Coached and mentored teammates with intellectual and developmental disabilities, adapting communication style and drill structure to each athlete's individual needs.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <p class="exp-range">Mar 2024 – May 2025</p>
+            <div class="exp-body">
+              <h4><span>Shift Manager</span> <span class="company">· Mochinut, Bellevue, WA</span></h4>
+              <ul>
+                <li>Managed shift operations for a 5-person team at a high-traffic mall location serving roughly 300 customers daily, owning all closing duties and register reconciliation.</li>
+                <li>Drove a 5–10% increase in shift sales through upselling and operational efficiency.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="exp-entry reveal">
+            <p class="exp-range">Mar 2024 – Aug 2024</p>
+            <div class="exp-body">
+              <h4><span>Founder &amp; Organizer</span> <span class="company">· Wilburton Soccer</span></h4>
+              <ul>
+                <li>Founded and operated a youth soccer training program running practices three times weekly, with a paid membership and per-session pricing model and self-run marketing.</li>
+                <li>Grew participation from 2 to 8+ players per session through self-directed community outreach.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Work ===================== -->
+    <section class="section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-num">03</span>
+          <h2>Work</h2>
+          <span class="section-rule" aria-hidden="true"></span>
+        </div>
+
+        <h3 class="projects-heading reveal">Software &amp; Product <span class="count">12</span></h3>
+        <div class="proj-grid">
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb proj-thumb--wide">
+              <img src="assets/screenshots/dubly.jpg" alt="Dubly — a husky-themed study buddy wired to UW Canvas" loading="lazy" width="1200" height="528" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2026</span></p>
+              <h4 class="proj-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                A husky-themed study buddy wired to your UW Canvas. Chat to see what's due and your
+                grades, ask about any syllabus, and spin up quizzes, flashcards, study plans, and
+                Word docs for your assignments — plus a bring-your-own-API-key architecture that
+                keeps it free to run at scale.
+              </p>
+              <button class="proj-demo" type="button" data-demo="dubly">View walkthrough</button>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Next.js</li><li class="tech-pill">Twilio</li><li class="tech-pill">Canvas LMS API</li><li class="tech-pill">Anthropic Claude API</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/debate.jpg" alt="AI Debate Colosseum — language models arguing a topic round by round" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2024</span></p>
+              <h4 class="proj-title"><a href="https://ai-debate-colosseum.onrender.com/" target="_blank" rel="noopener">AI Debate Colosseum <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Set a topic and watch two language models argue it out round by round, each
+                responding to the other's last point.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">LLMs</li><li class="tech-pill">Python</li><li class="tech-pill">Web</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/poker.jpg" alt="AI Poker Room — LLMs playing five-card draw against each other" loading="lazy" width="1280" height="844" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2026</span></p>
+              <h4 class="proj-title"><a href="https://ai-poker-qhbt.onrender.com/" target="_blank" rel="noopener">AI Poker Room <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Watch OpenAI, Anthropic, Gemini, and Grok models play five-card draw against each
+                other — live betting, bluffs, and showdowns, with each model's reasoning streamed in
+                as it decides whether to hold, raise, or fold.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Next.js</li><li class="tech-pill">TypeScript</li><li class="tech-pill">Multi-LLM</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/resume.jpg" alt="AI Resume Analyzer — a Gradio app returning structured résumé feedback" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2024</span></p>
+              <h4 class="proj-title"><a href="https://resume-analyzer-vrph.onrender.com/" target="_blank" rel="noopener">AI Resume Analyzer <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Upload a résumé and get structured, section-by-section feedback back — a Gradio app
+                running on the OpenAI API.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Python</li><li class="tech-pill">Gradio</li><li class="tech-pill">OpenAI API</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/cinemate.jpg" alt="CineMate — a retro movie-theater themed recommendation app" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2025</span></p>
+              <h4 class="proj-title"><a href="https://cinemate-d8bc.onrender.com" target="_blank" rel="noopener">CineMate <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                A movie night decided for you, staged inside a retro cinema. Filter by genre, mood,
+                runtime, rating, streaming service, and decade, then let it play titles across the
+                big screen — auto-skipping like channel surfing — with a watchlist, star-rated
+                history, and trailer links. Accounts and avatars run on Supabase Auth and Azure,
+                with a one-tap guest mode.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Next.js</li><li class="tech-pill">TypeScript</li><li class="tech-pill">Azure SQL</li><li class="tech-pill">Azure Blob Storage</li><li class="tech-pill">Supabase Auth</li><li class="tech-pill">TMDB API</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/charades.jpg" alt="Charades vs. AI — acting out words to a webcam for an AI to guess" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2024</span></p>
+              <h4 class="proj-title"><a href="https://charades-yutab-udbt5.azurewebsites.net/" target="_blank" rel="noopener">Charades vs. AI <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Act out a word to your webcam and the AI tries to guess it — charades against a
+                computer-vision opponent.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Claude API</li><li class="tech-pill">Computer Vision</li><li class="tech-pill">Webcam</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/chess.jpg" alt="Yutachess — real-time multiplayer chess" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2025</span></p>
+              <h4 class="proj-title"><a href="https://yutachess-production.up.railway.app/" target="_blank" rel="noopener">Yutachess <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Real-time multiplayer chess — share a 6-character room code, pick a time control
+                (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
+                WebSockets. Server-authoritative move validation blocks illegal moves and guarantees
+                fair play across concurrent clients.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Node.js</li><li class="tech-pill">Express</li><li class="tech-pill">Socket.IO</li><li class="tech-pill">chess.js</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb proj-thumb--wide">
+              <img src="assets/screenshots/adsnap.jpg" alt="AdSnap — a phone camera turning a product into a finished commercial" loading="lazy" width="1200" height="528" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2023</span></p>
+              <h4 class="proj-title"><a href="https://github.com/YutaB123/adsnap" target="_blank" rel="noopener">AdSnap <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Point your phone at any product and about two minutes later you have a finished
+                commercial — script, cinematic shots, slogans, voiceover, and music.
+              </p>
+              <button class="proj-demo" type="button" data-demo="adsnap">View walkthrough</button>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Mobile app</li><li class="tech-pill">React Native</li><li class="tech-pill">Azure AI</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/kit.jpg" alt="KitNations — World Cup 2026 national-team kit store" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2022</span></p>
+              <h4 class="proj-title"><a href="https://kitnations.org/" target="_blank" rel="noopener">KitNations <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                A Next.js e-commerce store for World Cup 2026 national-team kits from all 48 nations,
+                with product browsing, cart and checkout, and worldwide shipping.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Next.js</li><li class="tech-pill">React</li><li class="tech-pill">E-commerce</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb proj-thumb--wide">
+              <img src="assets/screenshots/recipe.jpg" alt="recipe.AI — photographing a fridge to get dish suggestions" loading="lazy" width="1200" height="528" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2023</span></p>
+              <h4 class="proj-title"><a href="https://github.com/YutaB123/fridge-ai" target="_blank" rel="noopener">recipe.AI <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Photograph the inside of your fridge and Claude Vision reads the ingredients, then
+                suggests dishes with cook times, nutrition, and full recipes.
+              </p>
+              <button class="proj-demo" type="button" data-demo="recipe">View walkthrough</button>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Mobile app</li><li class="tech-pill">React Native</li><li class="tech-pill">Claude Vision</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/tennis.jpg" alt="Hand Tennis — browser tennis controlled by webcam hand tracking" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2022</span></p>
+              <h4 class="proj-title"><a href="https://zealous-dune-03e552f1e.7.azurestaticapps.net/" target="_blank" rel="noopener">Hand Tennis <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Browser tennis you play with your hands — webcam hand-tracking moves the paddle, no
+                controller needed.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Computer Vision</li><li class="tech-pill">Hand Tracking</li><li class="tech-pill">JavaScript</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/zyde.jpg" alt="Zyde — a full-stack site designed, built, and tuned for search" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2023</span></p>
+              <h4 class="proj-title"><a href="https://zyde.org/" target="_blank" rel="noopener">Zyde <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                A full-stack site I designed, built, and tuned for search — live at zyde.org.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Web Design</li><li class="tech-pill">Full-stack</li><li class="tech-pill">SEO</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+
+        <h3 class="projects-heading projects-heading-secondary reveal">Data &amp; Analysis <span class="count">2</span></h3>
+        <div class="proj-grid proj-grid--pair">
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb proj-thumb--chart">
+              <img src="assets/screenshots/collisions.jpg" alt="Line chart of average Seattle crash severity by hour of day, peaking in the early morning and evening commute" loading="lazy" width="1200" height="600" />
+            </div>
+            <div class="proj-body">
+              <h4 class="proj-title"><a href="https://github.com/YutaB123/seattle_collision_analysis" target="_blank" rel="noopener">Seattle Traffic Collision Analysis <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                I live in Seattle, and I wanted to figure out where the city should actually be
+                spending its safety budget. So I analyzed 221,266 traffic collision records to find
+                out. Instead of just counting crashes, I built a scoring system that weighs how
+                severe each one was, which showed that cyclist crashes along the Burke-Gilman Trail
+                were a bigger problem than raw numbers suggested. I also checked whether missing
+                streetlights were a cause, since that seemed like an easy fix, but the data showed
+                they weren't.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Matplotlib</li><li class="tech-pill">Open Data</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb">
+              <img src="assets/screenshots/csv.jpg" alt="AI CSV Data Analyzer — plain-English questions answered with generated charts" loading="lazy" width="1280" height="800" />
+            </div>
+            <div class="proj-body">
+              <p class="proj-meta"><span>2025</span></p>
+              <h4 class="proj-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Upload a CSV, ask a question in plain English, and get back the chart that answers
+                it. A three-stage pipeline decides what to compute, runs the pandas itself, then
+                explains the result — and only the column names ever leave your machine, so the raw
+                rows stay on-device.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Gradio</li><li class="tech-pill">OpenAI GPT-4o-mini</li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Résumé ===================== -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-num">04</span>
+          <h2>Résumé</h2>
+          <span class="section-rule" aria-hidden="true"></span>
+        </div>
+
+        <div class="resume-grid reveal">
+          <div class="resume-card">
+            <h3>Education</h3>
+            <p class="resume-school">University of Washington</p>
+            <p class="resume-line"><span class="em">B.S. Informatics</span>, Data Science Track</p>
+            <p class="resume-line">GPA 3.75 · Seattle, WA</p>
+            <p class="resume-when">Expected June 2029</p>
+            <ul class="tech-pill-list">
+              <li class="tech-pill">CSE 163</li><li class="tech-pill">STAT 311</li><li class="tech-pill">INFO 201</li>
+            </ul>
+          </div>
+
+          <div class="resume-card resume-card--skills">
+            <h3>Technical Skills</h3>
+            <dl>
+              <div class="resume-skill-group">
+                <dt>Languages</dt>
+                <dd>Python, SQL, R, JavaScript</dd>
+              </div>
+              <div class="resume-skill-group">
+                <dt>Data &amp; Analysis</dt>
+                <dd>pandas, Matplotlib, Excel, statistical analysis, data cleaning &amp; visualization</dd>
+              </div>
+              <div class="resume-skill-group">
+                <dt>AI &amp; APIs</dt>
+                <dd>Anthropic Claude API, OpenAI API, LLM application development</dd>
+              </div>
+              <div class="resume-skill-group">
+                <dt>Tools</dt>
+                <dd>Git, GitHub, VS Code, Microsoft Azure, Next.js, Node.js</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="resume-card resume-card--download">
+            <p>
+              <strong>The one-page PDF</strong>
+              Everything above plus the full experience and project write-ups, formatted for
+              applications.
             </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Next.js</li><li class="tech-pill">TypeScript</li><li class="tech-pill">Azure SQL</li><li class="tech-pill">Azure Blob Storage</li><li class="tech-pill">Supabase Auth</li><li class="tech-pill">TMDB API</li>
-            </ul>
+            <a class="btn btn-primary" href="assets/resume.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              Download PDF
+            </a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="selected-project">
-          <a class="selected-project-thumb" href="https://kitnations.org/" target="_blank" rel="noopener">
-            <img src="assets/screenshots/kit.jpg" alt="KitNations — World Cup 2026 national-team kit store" loading="lazy" width="1280" height="800" />
-          </a>
-          <div class="selected-project-body">
-            <h4 class="selected-project-title"><a href="https://kitnations.org/" target="_blank" rel="noopener">KitNations <span aria-hidden="true">↗</span></a></h4>
-            <p class="selected-project-desc">
-              A Next.js e-commerce store for World Cup 2026 national-team kits from all 48 nations,
-              with product browsing, cart and checkout, and worldwide shipping.
-            </p>
-            <ul class="tech-pill-list">
-              <li class="tech-pill">Next.js</li><li class="tech-pill">React</li><li class="tech-pill">E-commerce</li>
-            </ul>
+    <!-- ===================== Contact ===================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-inner reveal">
+          <h2>Get in touch</h2>
+          <p>
+            I'm looking for data analyst internships. If you have one — or just want to talk about
+            a dataset — my inbox is open.
+          </p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:yutabanishky@gmail.com">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              yutabanishky@gmail.com
+            </a>
+            <a class="btn" href="https://github.com/YutaB123" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+              github.com/YutaB123
+            </a>
+            <a class="btn" href="https://linkedin.com/in/yuta-banishky" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              linkedin.com/in/yuta-banishky
+            </a>
           </div>
         </div>
+      </div>
+    </section>
+  </main>
 
-        <a class="archive-link" href="archive.html">View Full Project Archive <span aria-hidden="true">→</span></a>
-      </section>
-    </main>
-  </div>
+  <footer class="site-footer">
+    <div class="container">Designed &amp; built by Yuta Banishky</div>
+  </footer>
 
   <!-- ===== App scripts ===== -->
   <script defer src="script.js"></script>
