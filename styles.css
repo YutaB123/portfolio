@@ -585,8 +585,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .proj-grid:not(.proj-grid--pair) .proj-card.is-featured { grid-column: span 2; }
 }
 
-/* Data & Analysis is only two projects — give them a 2-up row of their own
-   instead of letting two span-2 tiles punch holes in the 3-column grid. */
+/* Data & Analysis cards are all is-featured — give them a 2-up row of their
+   own instead of letting span-2 tiles punch holes in the 3-column grid. */
 .proj-grid--pair { grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 900px) {
   .proj-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }

@@ -94,7 +94,7 @@
 
         <ul class="stat-strip reveal">
           <li class="stat">
-            <span class="stat-num">14</span>
+            <span class="stat-num">15</span>
             <span class="stat-label">projects built and shipped</span>
           </li>
           <li class="stat">
@@ -344,8 +344,29 @@
 
         </div>
 
-        <h3 class="projects-heading projects-heading-secondary reveal">Data &amp; Analysis <span class="count">2</span></h3>
+        <h3 class="projects-heading projects-heading-secondary reveal">Data &amp; Analysis <span class="count">3</span></h3>
         <div class="proj-grid proj-grid--pair">
+
+          <article class="proj-card is-featured reveal">
+            <div class="proj-thumb proj-thumb--chart">
+              <img src="assets/screenshots/911.jpg" alt="Bar chart of median Seattle Priority 1 police response time by precinct, with North precinct above the 7-minute standard" loading="lazy" width="1200" height="600" />
+            </div>
+            <div class="proj-body">
+              <h4 class="proj-title"><a href="https://github.com/YutaB123/911-analysis" target="_blank" rel="noopener">Seattle 911 Response Times <span class="arrow" aria-hidden="true">↗</span></a></h4>
+              <p class="proj-desc">
+                Seattle's 911 dispatch data promises officers reach Priority 1 calls in under 7
+                minutes. I cleaned 43,773 of 50,000 sampled calls — dropping test entries, bad
+                timestamps, and outliers over 120 minutes — and found the North precinct alone
+                missing that standard at a 7.2-minute median, while the rest of the city met it. A
+                phase-2 logistic regression on 10,770 calls then predicted whether a Priority 1 call
+                would clear in time from call type, geography, and time of day, scoring 0.723 ROC AUC
+                on a chronological holdout against a 0.519 baseline.
+              </p>
+              <ul class="tech-pill-list">
+                <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">scikit-learn</li><li class="tech-pill">Logistic regression</li><li class="tech-pill">Open Data</li>
+              </ul>
+            </div>
+          </article>
 
           <article class="proj-card is-featured reveal">
             <div class="proj-thumb proj-thumb--chart">
