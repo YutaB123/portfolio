@@ -11,13 +11,14 @@ Run:  python make_assets.py
 """
 from PIL import Image, ImageDraw, ImageFont
 
-# Mirrors the site palette in styles.css (charcoal surface + amber accent).
-SURFACE = (20, 20, 25)      # --surface  #141419
-BG = (11, 11, 15)           # --bg       #0b0b0f
-AMBER = (245, 158, 11)      # --accent   #f59e0b
-INK = (26, 18, 6)           # text on amber
-WHITE = (244, 244, 245)     # --fg       #f4f4f5
-MUTED = (161, 161, 170)     # --muted    #a1a1aa
+# Mirrors the site palette in styles.css (white/light-blue surface + blue accent).
+SURFACE = (238, 246, 252)   # --bg-soft  #eef6fc
+BG = (255, 255, 255)        # --bg       #ffffff
+ACCENT = (3, 105, 161)      # --accent   #0369a1
+ACCENT_LIGHT = (56, 189, 248)  # monogram gradient's lighter stop, matches favicon.svg
+INK = (255, 255, 255)       # text on accent
+TEXT = (16, 38, 58)         # --fg       #10263a
+MUTED = (79, 107, 130)      # --muted    #4f6b82
 
 FONTS = r"C:\Windows\Fonts"
 
@@ -64,9 +65,9 @@ def make_og():
     px, py = W - photo_w - 70, (H - photo_h) // 2
     shot = cover_crop(Image.open("assets/smile.jpg").convert("RGB"), (photo_w, photo_h))
     mask = rounded_mask((photo_w, photo_h), 28)
-    # subtle white border behind the photo
+    # subtle accent border behind the photo
     draw.rounded_rectangle([px - 4, py - 4, px + photo_w + 4, py + photo_h + 4],
-                           28 + 4, fill=AMBER)
+                           28 + 4, fill=ACCENT)
     card.paste(shot, (px, py), mask)
 
     # --- left-side text column ---
@@ -76,9 +77,9 @@ def make_og():
     role = font("segoeui.ttf", 30)
     url = font("segoeuib.ttf", 28)
 
-    draw.text((x, 150), "INFORMATICS @ UW  ·  DATA SCIENCE", font=eyebrow, fill=AMBER)
-    draw.text((x, 196), "Yuta", font=name, fill=WHITE)
-    draw.text((x, 290), "Banishky", font=name, fill=WHITE)
+    draw.text((x, 150), "INFORMATICS @ UW  ·  DATA SCIENCE", font=eyebrow, fill=ACCENT)
+    draw.text((x, 196), "Yuta", font=name, fill=TEXT)
+    draw.text((x, 290), "Banishky", font=name, fill=TEXT)
 
     role_lines = ["Data analyst — Python, SQL & pandas.", "Turning public data into decisions."]
     ry = 410
@@ -86,7 +87,7 @@ def make_og():
         draw.text((x, ry), ln, font=role, fill=MUTED)
         ry += 40
 
-    draw.text((x, 500), "yutabanishky.com", font=url, fill=AMBER)
+    draw.text((x, 500), "yutabanishky.com", font=url, fill=ACCENT)
 
     card.save("assets/og-image.png")
     print("wrote assets/og-image.png", card.size)
@@ -95,7 +96,7 @@ def make_og():
 def monogram(size, radius_ratio=0.22, fsize_ratio=0.5):
     # round the corners by compositing over transparent where saved as PNG
     out = Image.new("RGBA", (size, size), (0, 0, 0, 0))
-    grad = vgradient((size, size), AMBER, (217, 119, 6)).convert("RGBA")
+    grad = vgradient((size, size), ACCENT_LIGHT, ACCENT).convert("RGBA")
     mask = rounded_mask((size, size), int(size * radius_ratio))
     out.paste(grad, (0, 0), mask)
     draw = ImageDraw.Draw(out)

@@ -1,22 +1,22 @@
 /* ==========================================================================
    Yuta Banishky — portfolio
-   Single-page dark layout: sticky topbar, hero, stats, about, experience,
+   Single-page light layout: sticky topbar, hero, stats, about, experience,
    bento project grid, resume, contact.
    ========================================================================== */
 
 /* ===== Tokens ===== */
 :root {
-  --bg: #0b0b0f;
-  --bg-soft: #0f0f14;
-  --surface: #141419;
-  --surface-2: #1c1c23;
-  --border: #2a2a33;
-  --fg: #f4f4f5;
-  --muted: #a1a1aa;
-  --muted-2: #8b8b95;
-  --accent: #f59e0b;
-  --accent-soft: rgba(245, 158, 11, 0.12);
-  --accent-line: rgba(245, 158, 11, 0.35);
+  --bg: #ffffff;
+  --bg-soft: #eef6fc;
+  --surface: #f7fbfe;
+  --surface-2: #eaf3fb;
+  --border: #d9e8f5;
+  --fg: #10263a;
+  --muted: #4f6b82;
+  --muted-2: #7791a6;
+  --accent: #0369a1;
+  --accent-soft: rgba(3, 105, 161, 0.08);
+  --accent-line: rgba(3, 105, 161, 0.3);
 
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
   --font-display: 'Outfit', var(--font-sans);
@@ -87,7 +87,7 @@ a {
   text-decoration: none;
   transition: var(--transition);
 }
-a:hover { color: #fbbf24; }
+a:hover { color: #0ea5e9; }
 
 img { display: block; max-width: 100%; }
 
@@ -154,7 +154,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(11, 11, 15, 0.82);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -329,13 +329,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #1a1206;
+  color: #ffffff;
   font-weight: 600;
 }
 .btn-primary:hover {
-  background: #fbbf24;
-  border-color: #fbbf24;
-  color: #1a1206;
+  background: #0ea5e9;
+  border-color: #0ea5e9;
+  color: #ffffff;
 }
 
 /* Headshot — light studio background, so ring it and let the page breathe
@@ -349,7 +349,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow:
     0 0 0 6px var(--bg),
     0 0 0 8px var(--accent-line),
-    0 24px 60px rgba(0, 0, 0, 0.55);
+    0 24px 60px rgba(16, 38, 58, 0.18);
 }
 .hero-photo img {
   width: 100%;
@@ -843,7 +843,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(245, 158, 11, 0.06), transparent 40%);
+  background: radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(3, 105, 161, 0.06), transparent 40%);
 }
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .cursor-glow { display: none; }
@@ -864,33 +864,35 @@ ul { margin: 0; padding: 0; list-style: none; }
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
   background: #000;
 }
+/* Backdrop stays dark regardless of site theme (image viewer convention), so
+   its text/icon colors are hardcoded light rather than following --fg/--accent. */
 .lb-cap {
   margin: var(--space-4) auto var(--space-2);
   max-width: 46ch; text-align: center;
-  color: var(--fg); font-size: var(--fz-md); line-height: 1.5;
+  color: #f4f4f5; font-size: var(--fz-md); line-height: 1.5;
 }
 .lb-meta { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .lb-counter {
-  color: var(--muted-2);
+  color: #9aabb8;
   font-family: var(--font-mono);
   font-size: var(--fz-xxs);
   font-variant-numeric: tabular-nums;
 }
 .lb-dots { display: flex; gap: 7px; }
 .lb-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255, 255, 255, 0.24); }
-.lb-dot.on { background: var(--accent); }
+.lb-dot.on { background: #38bdf8; }
 .lb-close {
   position: absolute; top: 18px; right: 22px; width: 44px; height: 44px;
-  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: var(--fg);
+  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #f4f4f5;
   font-size: 1.6rem; line-height: 1; cursor: pointer; transition: background 0.15s ease;
 }
-.lb-close:hover { background: var(--accent-soft); color: var(--accent); }
+.lb-close:hover { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
 .lb-nav {
   flex-shrink: 0; width: 48px; height: 48px;
-  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: var(--fg);
+  border: 0; border-radius: 50%; background: rgba(255, 255, 255, 0.1); color: #f4f4f5;
   font-size: 1.8rem; line-height: 1; cursor: pointer; transition: background 0.15s ease;
 }
-.lb-nav:hover { background: var(--accent-soft); color: var(--accent); }
+.lb-nav:hover { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
 @media (max-width: 640px) {
   .lb-nav { width: 40px; height: 40px; font-size: 1.5rem; }
   .lb-img { max-width: 80vw; }
