@@ -235,9 +235,59 @@ ul { margin: 0; padding: 0; list-style: none; }
 
 /* ===== Hero ===== */
 .hero {
+  position: relative;
+  overflow: hidden;
   padding-top: var(--space-9);
   /* Small — the section below adds its own top padding on top of this. */
   padding-bottom: var(--space-2);
+}
+/* Content sits above .sky-decor; see stacking note there. */
+.hero > .container { position: relative; z-index: 1; }
+
+/* ===== Sky decor: drifting clouds + gliding birds =====
+   Purely decorative, confined to the hero so it never competes with page
+   content. z-index: 0 puts it below .hero > .container (z-index: 1). */
+.sky-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+/* Pinned to the empty margin above the heading (.hero's own padding-top is
+   64/96px) so nothing ever drifts or flies over the name, text, or photo. */
+.cloud {
+  position: absolute;
+  width: 150px;
+  color: var(--border);
+}
+.cloud svg { width: 100%; height: auto; display: block; fill: currentColor; }
+.cloud-a { top: 12px; left: 6%; width: 110px; opacity: 0.75; }
+.cloud-b { top: 22px; right: 10%; width: 150px; opacity: 0.5; }
+.bird {
+  position: absolute;
+  width: 20px;
+  color: var(--muted);
+  left: -30px;
+  will-change: transform;
+}
+.bird-a { top: 10px; animation: fly 28s linear infinite; }
+.bird-b { top: 34px; width: 15px; animation: fly 36s linear infinite -14s; }
+@media (prefers-reduced-motion: no-preference) {
+  .cloud-a { animation: drift 70s ease-in-out infinite; }
+  .cloud-b { animation: drift 90s ease-in-out infinite -20s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bird { display: none; }
+}
+@keyframes fly {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(50vw, -6px); }
+  100% { transform: translate(calc(100vw + 30px), 0); }
+}
+@keyframes drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(14px); }
 }
 .hero-grid {
   display: grid;
