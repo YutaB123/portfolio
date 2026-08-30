@@ -240,6 +240,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   padding-top: var(--space-9);
   /* Small — the section below adds its own top padding on top of this. */
   padding-bottom: var(--space-2);
+  /* Sky wash: fades out well before the heading so text still sits on a
+     near-white background. Fixed px stops (not %) so the fade lands at the
+     same spot regardless of hero height. */
+  background: linear-gradient(to bottom, #cfe9fb 0, #e6f4fc 160px, var(--bg) 460px);
 }
 /* Content sits above .sky-decor; see stacking note there. */
 .hero > .container { position: relative; z-index: 1; }
@@ -259,20 +263,23 @@ ul { margin: 0; padding: 0; list-style: none; }
 .cloud {
   position: absolute;
   width: 150px;
-  color: var(--border);
+  color: #ffffff;
 }
 .cloud svg { width: 100%; height: auto; display: block; fill: currentColor; }
-.cloud-a { top: 12px; left: 6%; width: 110px; opacity: 0.75; }
-.cloud-b { top: 22px; right: 10%; width: 150px; opacity: 0.5; }
+.cloud-a { top: 8px; left: 6%; width: 120px; opacity: 0.9; }
+.cloud-b { top: 20px; right: 10%; width: 160px; opacity: 0.75; }
 .bird {
   position: absolute;
-  width: 20px;
-  color: var(--muted);
+  width: 18px;
+  color: var(--fg);
   left: -30px;
   will-change: transform;
 }
-.bird-a { top: 10px; animation: fly 28s linear infinite; }
-.bird-b { top: 34px; width: 15px; animation: fly 36s linear infinite -14s; }
+.bird-a { top: 4px; animation: fly 26s linear infinite; }
+.bird-b { top: 16px; width: 14px; animation: fly 33s linear infinite -8s; }
+.bird-c { top: 27px; width: 16px; animation: fly 24s linear infinite -17s; }
+.bird-d { top: 38px; width: 13px; animation: fly 40s linear infinite -3s; }
+.bird-e { top: 49px; width: 15px; animation: fly 30s linear infinite -22s; }
 @media (prefers-reduced-motion: no-preference) {
   .cloud-a { animation: drift 70s ease-in-out infinite; }
   .cloud-b { animation: drift 90s ease-in-out infinite -20s; }
