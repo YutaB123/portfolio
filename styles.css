@@ -687,6 +687,8 @@ ul { margin: 0; padding: 0; list-style: none; }
 .proj-card.is-featured .proj-thumb--wide { aspect-ratio: 1200 / 528; }
 .proj-thumb--chart { aspect-ratio: 1200 / 600; }
 .proj-card.is-featured .proj-thumb--chart { aspect-ratio: 1200 / 600; }
+.proj-thumb--tableau { aspect-ratio: 1200 / 759; }
+.proj-card.is-featured .proj-thumb--tableau { aspect-ratio: 1200 / 759; }
 .proj-thumb img {
   width: 100%;
   height: 100%;
