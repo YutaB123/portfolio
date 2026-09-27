@@ -764,6 +764,21 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: var(--accent-soft);
 }
 
+/* Secondary links (e.g. GitHub, external dashboard) alongside the stretched
+   title link — raised above it like the demo button so both stay clickable. */
+.proj-links {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fz-xxs);
+  color: var(--muted-2);
+}
+.proj-links a { color: var(--muted); text-decoration: none; }
+.proj-links a:hover { color: var(--accent); }
+
 /* ===== Résumé ===== */
 .resume-grid {
   display: grid;
