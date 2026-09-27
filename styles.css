@@ -420,39 +420,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   .hero-photo { justify-self: end; }
 }
 
-/* ===== Stat strip ===== */
-.stat-strip {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-3);
-  margin-top: var(--space-8);
-}
-@media (min-width: 720px) {
-  .stat-strip { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-}
-.stat {
-  padding: var(--space-4) var(--space-4) var(--space-5);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-.stat-num {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: clamp(24px, 3.4vw, 32px);
-  font-weight: 500;
-  color: var(--accent);
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-}
-.stat-label {
-  display: block;
-  margin-top: var(--space-2);
-  font-size: var(--fz-xs);
-  color: var(--muted-2);
-  line-height: 1.4;
-}
-
 /* ===== About ===== */
 .about-grid {
   display: grid;
