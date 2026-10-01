@@ -1,6 +1,6 @@
 # Yuta Banishky — Portfolio
 
-A single-page portfolio: everything (about, experience, all 14 projects, résumé
+A single-page portfolio: everything (about, experience, all 17 projects, résumé
 summary, contact) lives on `index.html`. Plain HTML + CSS + vanilla JS, no build
 step, no dependencies.
 

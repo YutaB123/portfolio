@@ -33,7 +33,7 @@ accordingly.
 
 Everything lives in four files at the repo root:
 
-- `index.html` — the entire site (all sections, all 14 project cards, résumé
+- `index.html` — the entire site (all sections, all 17 project cards, résumé
   section). There's no templating; every project card is hand-duplicated HTML.
 - `styles.css` — the only stylesheet. Design tokens (colors, fonts, spacing,
   radii) are CSS custom properties in `:root` at the top — change the palette
