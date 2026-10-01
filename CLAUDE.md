@@ -72,7 +72,7 @@ Conventions to preserve when adding or editing one:
 ### Résumé
 
 The résumé's source of truth is **outside this repo**, at
-`~/OneDrive/Documents/Resume/Yuta Banishky Resume.pdf`. `build_resume.py`
+`~/OneDrive/Documents/Resume/2028 Graduation (Old)/Yuta_Banishky_Resume.pdf`. `build_resume.py`
 copies it into `assets/resume.pdf` (served by the "Download Résumé" buttons)
 and warns if it isn't exactly one page. Commit the copied PDF and push to
 deploy it — there is no other pipeline (an older `resume/resume.html` →
