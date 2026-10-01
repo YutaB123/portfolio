@@ -13,3 +13,7 @@ nocache_server.py
 # Editor folders
 .vscode/
 .idea/
+
+# Local page screenshots in the repo root (site images live in assets/screenshots/)
+/all project page.png
+/homepage*.png
