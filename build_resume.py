@@ -19,7 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.resolve()
 OUT = ROOT / "assets" / "resume.pdf"
-SRC = Path.home() / "OneDrive" / "Documents" / "Resume" / "Yuta Banishky Resume.pdf"
+SRC = Path.home() / "OneDrive" / "Documents" / "Resume" / "2028 Graduation (Old)" / "Yuta_Banishky_Resume.pdf"
 
 
 def page_count(pdf: Path) -> int:
