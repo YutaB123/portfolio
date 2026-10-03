@@ -123,12 +123,7 @@
               <p class="proj-meta"><span>2026</span></p>
               <h4 class="proj-title"><a href="https://canvas-study-assistant.onrender.com/chat" target="_blank" rel="noopener">Dubly <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                A husky-themed study buddy wired to your UW Canvas — chat to see what's due, ask
-                about any syllabus, and generate quizzes, flashcards, and study plans from your
-                course material. Fixing a SQLite concurrency bug across 10 data stores with
-                per-thread connections and WAL mode cut the error rate under load from 35% to 0%,
-                verified by a TDD stress suite; token-level accounting put each turn at $0.0475 and
-                identified prompt caching as a 74% cost reduction.
+                A husky-themed study buddy wired to your UW Canvas — chat to see what's due, ask about any syllabus, and generate quizzes, flashcards, and study plans.
               </p>
               <button class="proj-demo" type="button" data-demo="dubly">View walkthrough</button>
               <ul class="tech-pill-list">
@@ -197,10 +192,7 @@
               <p class="proj-meta"><span>2025</span></p>
               <h4 class="proj-title"><a href="https://csv-reader-iyw5.onrender.com/" target="_blank" rel="noopener">AI CSV Data Analyzer <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                Upload a CSV, ask a question in plain English, and get back the chart that answers
-                it. A three-stage pipeline decides what to compute, runs the pandas itself, then
-                explains the result — and only the column names ever leave your machine, so the raw
-                rows stay on-device.
+                Upload a CSV, ask a question in plain English, and get the chart that answers it. Only column names leave your machine; the raw rows stay on-device.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Gradio</li><li class="tech-pill">OpenAI GPT-4o-mini</li>
@@ -216,11 +208,7 @@
               <p class="proj-meta"><span>2025</span></p>
               <h4 class="proj-title"><a href="https://cinemate-d8bc.onrender.com" target="_blank" rel="noopener">CineMate <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                A movie night decided for you, staged inside a retro cinema. Filter by genre, mood,
-                runtime, rating, streaming service, and decade, then let it play titles across the
-                big screen — auto-skipping like channel surfing — with a watchlist, star-rated
-                history, and trailer links. Accounts and avatars run on Supabase Auth and Azure,
-                with a one-tap guest mode.
+                A movie night decided for you, staged inside a retro cinema. Filter by genre, mood, and runtime, then let it channel-surf titles across the big screen.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Next.js</li><li class="tech-pill">TypeScript</li><li class="tech-pill">Azure SQL</li><li class="tech-pill">Azure Blob Storage</li><li class="tech-pill">Supabase Auth</li><li class="tech-pill">TMDB API</li>
@@ -236,11 +224,7 @@
               <p class="proj-meta"><span>2025</span></p>
               <h4 class="proj-title"><a href="https://yutachess.onrender.com" target="_blank" rel="noopener">Yutachess <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                Real-time multiplayer chess — share a 6-character room code, pick a time control
-                (Bullet/Blitz/Rapid), and play with live rematch support synchronized over
-                WebSockets. The backend is server-authoritative, validating every move and syncing
-                state between players; load-tested to 3,000 concurrent games and 374K+ moves with
-                zero state desynchronization and 1.89 ms p50 latency.
+                Real-time multiplayer chess with room codes, time controls, and live rematches over WebSockets. Load-tested to 3,000 concurrent games with zero desyncs.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Node.js</li><li class="tech-pill">Express</li><li class="tech-pill">Socket.IO</li><li class="tech-pill">chess.js</li>
@@ -342,11 +326,7 @@
               <p class="proj-meta"><span>2026</span></p>
               <h4 class="proj-title"><a href="https://yutab123.github.io/where-do-my-taxes-go/" target="_blank" rel="noopener">Where My Taxes Go <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                Pick a city and enter an income, and it breaks your federal, state, and local tax
-                into the programmes it actually funded, two levels deep, in plain English — combining
-                all three levels of government into one personalized picture across six cities. Every
-                number is sourced: a build pipeline regenerates the entire data corpus from primary
-                documents on every run and refuses to write anything if its verification pass fails.
+                Pick a city and enter an income to see your federal, state, and local tax broken into the programmes it funded, with every number sourced.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Python</li><li class="tech-pill">Data Pipeline</li><li class="tech-pill">JavaScript</li><li class="tech-pill">Open Data</li>
@@ -366,13 +346,7 @@
             <div class="proj-body">
               <h4 class="proj-title"><a href="https://github.com/YutaB123/911-analysis" target="_blank" rel="noopener">Seattle 911 Response Times <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                Seattle's 911 dispatch data promises officers reach Priority 1 calls in under 7
-                minutes. I cleaned 43,773 of 50,000 sampled calls — dropping test entries, bad
-                timestamps, and outliers over 120 minutes — and found the North precinct alone
-                missing that standard at a 7.2-minute median, while the rest of the city met it. A
-                phase-2 logistic regression on 10,770 calls then predicted whether a Priority 1 call
-                would clear in time from call type, geography, and time of day, scoring 0.723 ROC AUC
-                on a chronological holdout against a 0.519 baseline.
+                Cleaned 43,773 Seattle 911 calls and found the North precinct missing the 7-minute Priority 1 standard, then modeled response times with 0.723 ROC AUC.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">scikit-learn</li><li class="tech-pill">Logistic regression</li><li class="tech-pill">Open Data</li>
@@ -387,13 +361,7 @@
             <div class="proj-body">
               <h4 class="proj-title"><a href="https://github.com/YutaB123/seattle_collision_analysis" target="_blank" rel="noopener">Seattle Traffic Collision Analysis <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                I live in Seattle, and I wanted to figure out where the city should actually be
-                spending its safety budget. So I analyzed 221,266 traffic collision records to find
-                out. Instead of just counting crashes, I built a scoring system that weighs how
-                severe each one was, which showed that cyclist crashes along the Burke-Gilman Trail
-                were a bigger problem than raw numbers suggested. I also checked whether missing
-                streetlights were a cause, since that seemed like an easy fix, but the data showed
-                they weren't.
+                Analyzed 221,266 Seattle traffic collisions with a severity-weighted score, showing Burke-Gilman Trail cyclist crashes mattered more than raw counts suggested.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Python</li><li class="tech-pill">pandas</li><li class="tech-pill">Matplotlib</li><li class="tech-pill">Open Data</li>
@@ -409,11 +377,7 @@
             <div class="proj-body">
               <h4 class="proj-title"><a href="#" target="_blank" rel="noopener">Superstore Performance Dashboard <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                A five-view Tableau dashboard on 9,994 retail orders from 2014 to 2017, tracking
-                sales, profit, and discounting together. It surfaces a threshold effect the totals
-                alone hide: profit stays positive through about a 20% discount, then flips negative,
-                and the Tables sub-category alone loses roughly $18K at a 26% average discount.
-                Filters for region, category, and year let you drill into any of the five views live.
+                A five-view Tableau dashboard on 9,994 retail orders that shows profit flipping negative once discounts pass about 20%.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">Tableau</li><li class="tech-pill">Data Visualization</li><li class="tech-pill">Retail Analytics</li>
@@ -428,9 +392,7 @@
             <div class="proj-body">
               <h4 class="proj-title"><a href="assets/olist-report.pdf" target="_blank" rel="noopener">Why Isn't Olist Growing? <span class="arrow" aria-hidden="true">↗</span></a></h4>
               <p class="proj-desc">
-                End-to-end analysis of 100K orders from a Brazilian marketplace. Found that 97%
-                of customers never reorder and late deliveries cut ratings by almost 2 stars,
-                then recommended three retention actions.
+                End-to-end analysis of 100K Brazilian marketplace orders: 97% of customers never reorder, and late deliveries cut ratings by almost 2 stars.
               </p>
               <ul class="tech-pill-list">
                 <li class="tech-pill">SQL Server</li><li class="tech-pill">Python</li><li class="tech-pill">Tableau</li><li class="tech-pill">Cohort Analysis</li><li class="tech-pill">RFM</li>
