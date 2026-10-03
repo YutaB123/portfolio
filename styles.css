@@ -591,9 +591,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   display: grid;
   gap: var(--space-4);
   grid-template-columns: minmax(0, 1fr);
-  /* Cards size to their own content. Stretching them to the tallest tile in
-     the row leaves a dead gap inside the short ones. */
-  align-items: start;
+  /* Every card in a row stretches to the tallest one so all boxes match. */
+  align-items: stretch;
 }
 @media (min-width: 640px) {
   .proj-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -601,19 +600,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 @media (min-width: 1024px) {
   .proj-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    /* Featured tiles span 2 columns; dense packing backfills the gaps they
-       leave so the grid never ends up with holes. */
-    grid-auto-flow: dense;
   }
-  /* Scoped away from --pair, where a 2-span tile would fill the whole row. */
-  .proj-grid:not(.proj-grid--pair) .proj-card.is-featured { grid-column: span 2; }
-}
-
-/* Data & Analysis cards are all is-featured — give them a 2-up row of their
-   own instead of letting span-2 tiles punch holes in the 3-column grid. */
-.proj-grid--pair { grid-template-columns: minmax(0, 1fr); }
-@media (min-width: 900px) {
-  .proj-grid--pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 .proj-card {
@@ -647,15 +634,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   border-bottom: 1px solid var(--border);
   aspect-ratio: 16 / 10;
 }
-.proj-card.is-featured .proj-thumb { aspect-ratio: 16 / 9; }
-/* Source screenshots that are wider than the default box, matched exactly so
-   `cover` has nothing to crop off the sides. */
-.proj-thumb--wide { aspect-ratio: 1200 / 528; }
-.proj-card.is-featured .proj-thumb--wide { aspect-ratio: 1200 / 528; }
-.proj-thumb--chart { aspect-ratio: 1200 / 600; }
-.proj-card.is-featured .proj-thumb--chart { aspect-ratio: 1200 / 600; }
-.proj-thumb--tableau { aspect-ratio: 1200 / 759; }
-.proj-card.is-featured .proj-thumb--tableau { aspect-ratio: 1200 / 759; }
 .proj-thumb img {
   width: 100%;
   height: 100%;
@@ -706,7 +684,6 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-size: var(--fz-sm);
   color: var(--muted);
 }
-.proj-card.is-featured .proj-desc { font-size: var(--fz-md); }
 .proj-body .tech-pill-list { margin-top: auto; padding-top: var(--space-4); }
 
 .proj-demo {
